@@ -6,7 +6,8 @@ on:
   workflow_dispatch: {}     # allows manual triggering from the Actions tab
 
 permissions:
-  contents: write   # required to create/upload release assets
+  contents: write   # required to create/upload release assets, and to push the site-data commit
+  actions: write     # required to explicitly trigger pages.yml (see step below)
 
 jobs:
   ingest:
@@ -55,12 +56,31 @@ jobs:
         # small and gets overwritten in place, not grown, so no bloat risk.
         # This is also what makes Pages "live": Pages serves whatever's in
         # git, so the JSON has to land there for the site to actually update.
+        id: commit_site_data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add site/data/latest.json
-          git diff --staged --quiet || git commit -m "Auto-update site data"
-          git push
+          if git diff --staged --quiet; then
+            echo "No change in site data — skipping commit."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Auto-update site data"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Trigger Pages redeploy
+        # IMPORTANT: a push made with the default GITHUB_TOKEN (as above)
+        # does NOT trigger other workflows' `on: push` — this is a deliberate
+        # GitHub restriction to prevent infinite workflow-chaining loops. So
+        # pages.yml would silently never redeploy on the daily cron without
+        # this explicit trigger. An explicit `gh workflow run` call is exempt
+        # from that restriction (it's not implicit event-chaining).
+        if: steps.commit_site_data.outputs.changed == 'true'
+        run: gh workflow run pages.yml --ref main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload updated data snapshot
         run: gh release upload data-latest data/gridflex.duckdb --clobber
