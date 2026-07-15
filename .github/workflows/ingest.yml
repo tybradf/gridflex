@@ -1,0 +1,53 @@
+name: Ingest
+
+on:
+  schedule:
+    - cron: '17 6 * * *'   # daily, 06:17 UTC — arbitrary off-peak minute
+  workflow_dispatch: {}     # allows manual triggering from the Actions tab
+
+permissions:
+  contents: write   # required to create/upload release assets
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install package
+        run: pip install -e ".[dev]"
+
+      - name: Download previous data snapshot
+        # The DB is persisted as a Release asset, NOT committed to git — a
+        # daily-growing binary in git history would bloat the repo forever
+        # (learned this the hard way locally — see Session 2 git push failure).
+        # First run ever: this will fail (no release exists yet) — that's
+        # expected; see the README for the one-time manual seed step.
+        run: |
+          mkdir -p data
+          gh release download data-latest --pattern 'gridflex.duckdb' --dir data --clobber \
+            || echo "No previous snapshot found (expected on the very first run)."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Ingest latest data
+        run: |
+          if [ -f data/gridflex.duckdb ]; then
+            echo "Snapshot found — incremental ingest via watermark."
+            python -m gridflex.cli ingest
+          else
+            echo "!!! No snapshot downloaded. Falling back to a 30-day pull."
+            echo "!!! For full history, seed the release manually — see README."
+            python -m gridflex.cli ingest --start "$(date -u -d '30 days ago' +%Y-%m-%dT%H)"
+          fi
+        env:
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+
+      - name: Upload updated data snapshot
+        run: gh release upload data-latest data/gridflex.duckdb --clobber
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

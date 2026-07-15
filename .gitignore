@@ -1,2 +1,22 @@
+# Secrets 
 .env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local scratch
+scratch/
+*.log
+
+# Data: we DO commit curated parquet under data/curated (small, needed by GH Pages),
+# but never the raw dumps or the local DuckDB file.
+data/raw/
 *.duckdb
+*.duckdb.wal

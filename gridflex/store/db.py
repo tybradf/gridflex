@@ -95,6 +95,12 @@ TABLE_COLUMNS: dict[str, list[str]] = {
 
 def get_connection() -> duckdb.DuckDBPyConnection:
     con = duckdb.connect(str(DB_PATH))
+    # Pin session timezone to UTC. DuckDB's TIMESTAMPTZ is stored correctly
+    # regardless, but *display* follows the session timezone, which defaults
+    # to the host machine's local zone. Without this, the same data displays
+    # differently on your laptop (America/New_York) vs. a GitHub Actions
+    # runner (UTC) — confusing, not a data bug, but worth pinning explicitly.
+    con.execute("SET TimeZone='UTC'")
     for ddl in _DDL.values():
         con.execute(ddl)
     return con
@@ -145,6 +151,15 @@ def row_counts(con: duckdb.DuckDBPyConnection) -> dict[str, int]:
 
 def max_period(con: duckdb.DuckDBPyConnection, table: str) -> pd.Timestamp | None:
     """Latest period currently stored — the watermark for incremental pulls.
-    Used by block 2.2, defined here since it's a store-level query."""
+    Used by block 2.2, defined here since it's a store-level query.
+
+    NOTE: DuckDB may return either a naive or an already-tz-aware datetime
+    for a TIMESTAMPTZ column depending on version/session settings.
+    pd.Timestamp(x, tz="UTC") raises if x is already aware, so handle both
+    explicitly rather than assuming one.
+    """
     result = con.execute(f"SELECT MAX(period) FROM {table}").fetchone()[0]
-    return pd.Timestamp(result, tz="UTC") if result is not None else None
+    if result is None:
+        return None
+    ts = pd.Timestamp(result)
+    return ts.tz_localize("UTC") if ts.tzinfo is None else ts.tz_convert("UTC")
