@@ -149,3 +149,27 @@ PLAUSIBLE_RANGES = {
     "subba_demand": (0, 60_000),
     "fuel_mix": (0, 150_000),  # single fuel type, system-wide
 }
+
+# Approximate emission factors (kg CO2/MWh), commonly-cited EPA eGRID-derived
+# national averages. NOT plant-specific or region-specific — a real refinement
+# would use EPA eGRID's published subregion/plant-level rates (or CAMPD
+# unit-level data, same source noted for the zone-level carbon limitation).
+# Documented here as an approximation, not hidden — see README known limitations.
+EMISSION_FACTORS_KG_PER_MWH: dict[str, float] = {
+    "COL": 1000,   # Coal
+    "NG": 410,     # Natural gas
+    "OIL": 760,    # Petroleum
+    "NUC": 0,      # Nuclear — no combustion emissions
+    "WAT": 0,      # Hydro
+    "WND": 0,      # Wind
+    "SUN": 0,      # Solar
+    "GEO": 40,     # Geothermal — small but nonzero
+    "BAT": 0,      # Battery storage — pass-through, not a primary source
+    "PS": 0,       # Pumped storage — same
+    "OES": 0,      # Other energy storage
+    "SNB": 0,      # Solar + battery — treat as solar-dominant, 0
+    "WNB": 0,      # Wind + battery — same logic
+    "UES": 0,      # Unknown storage
+    "OTH": 0,      # Other — unknown composition, conservative 0 rather than guessing
+    "UNK": 0,      # Unknown
+}

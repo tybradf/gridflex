@@ -1,0 +1,5169 @@
+{
+  "zone_demand": [
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "PL",
+      "demand_mw": 4389.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "CE",
+      "demand_mw": 11887.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 2868.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2149.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "AP",
+      "demand_mw": 5376.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 181.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3699.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 17179.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1373.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 7530.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "PE",
+      "demand_mw": 4272.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3457.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1497.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1693.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "PS",
+      "demand_mw": 5164.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 16138.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 1805.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2588.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1600.0
+    },
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1607.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "PL",
+      "demand_mw": 4164.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 15553.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 7105.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2385.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 16430.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2016.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "PE",
+      "demand_mw": 4015.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1602.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "PS",
+      "demand_mw": 4888.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1289.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1393.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1510.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3258.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "CE",
+      "demand_mw": 11250.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1518.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 2719.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "AP",
+      "demand_mw": 5089.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 169.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 1710.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3468.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "PE",
+      "demand_mw": 3833.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1539.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "PS",
+      "demand_mw": 4675.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 15932.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3106.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1231.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1222.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 1639.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 6864.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "AP",
+      "demand_mw": 4896.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3298.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 1921.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 15020.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "PL",
+      "demand_mw": 4014.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "CE",
+      "demand_mw": 10678.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 2602.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 162.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2254.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1453.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1451.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "CE",
+      "demand_mw": 10255.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 2531.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 1858.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 14758.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 158.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 1589.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2167.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 15638.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1410.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 2985.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1405.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "PL",
+      "demand_mw": 3884.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "PE",
+      "demand_mw": 3718.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1506.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "PS",
+      "demand_mw": 4528.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1195.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1266.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 6637.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "AP",
+      "demand_mw": 4770.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3195.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 6465.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "AP",
+      "demand_mw": 4708.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3144.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 1828.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "CE",
+      "demand_mw": 9951.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 2501.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 155.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 14660.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 1564.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2101.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1372.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1371.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "PL",
+      "demand_mw": 3819.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "PE",
+      "demand_mw": 3653.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 15453.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1486.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1178.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1278.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "PS",
+      "demand_mw": 4427.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 2919.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1236.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1355.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1364.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2068.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1163.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "PS",
+      "demand_mw": 4344.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 1562.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 2902.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 15425.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1486.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "PL",
+      "demand_mw": 3802.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "PE",
+      "demand_mw": 3635.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 14595.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 6406.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3129.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "AP",
+      "demand_mw": 4683.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 1822.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "CE",
+      "demand_mw": 9776.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 2495.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 152.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1351.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3117.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "AP",
+      "demand_mw": 4679.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1383.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 2935.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "PS",
+      "demand_mw": 4271.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 15461.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1159.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1263.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 6413.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1513.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "PE",
+      "demand_mw": 3668.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 151.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 2520.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2077.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "PL",
+      "demand_mw": 3837.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 1839.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "CE",
+      "demand_mw": 9622.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 1566.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 14617.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 6699.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1399.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1468.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 1935.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "PL",
+      "demand_mw": 3994.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1198.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "PE",
+      "demand_mw": 3884.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1581.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "PS",
+      "demand_mw": 4355.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1294.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2127.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "AP",
+      "demand_mw": 4867.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 14996.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3192.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 15812.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3022.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "CE",
+      "demand_mw": 9644.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 2586.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 158.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 1637.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "CE",
+      "demand_mw": 10066.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 2764.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 171.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 16263.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3132.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 7242.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 15828.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 1779.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1253.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1339.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "PE",
+      "demand_mw": 4219.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1676.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "PS",
+      "demand_mw": 4408.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1488.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "PL",
+      "demand_mw": 4229.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2066.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1578.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "AP",
+      "demand_mw": 5218.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2250.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3334.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2466.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "AP",
+      "demand_mw": 5588.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3514.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "CE",
+      "demand_mw": 10785.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 2989.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 185.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 16786.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3268.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 7882.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 1937.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 16636.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1295.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1448.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "PL",
+      "demand_mw": 4475.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "PE",
+      "demand_mw": 4576.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1608.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1670.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1781.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2230.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "subba": "PS",
+      "demand_mw": 4586.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1725.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1764.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1532.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 8507.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2081.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "PS",
+      "demand_mw": 4847.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 17379.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 17198.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3422.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "AP",
+      "demand_mw": 5905.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3706.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "CE",
+      "demand_mw": 11762.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 3237.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 200.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2345.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "PE",
+      "demand_mw": 4917.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1867.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1335.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "PL",
+      "demand_mw": 4692.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2659.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2229.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "CE",
+      "demand_mw": 12678.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3885.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "AP",
+      "demand_mw": 6215.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 17685.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 9058.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 18159.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3559.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1839.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1874.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 217.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "PS",
+      "demand_mw": 5136.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1381.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "PL",
+      "demand_mw": 4941.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1622.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2900.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1947.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2424.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 3480.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "subba": "PE",
+      "demand_mw": 5208.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 18994.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 3667.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2369.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 237.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2524.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 18257.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 9563.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "CE",
+      "demand_mw": 13525.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3721.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "JC",
+      "demand_mw": 3146.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1445.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "PS",
+      "demand_mw": 5443.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4086.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1712.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1906.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5198.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1980.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "PE",
+      "demand_mw": 5463.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2030.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "subba": "AP",
+      "demand_mw": 6511.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1514.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1786.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "JC",
+      "demand_mw": 3391.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5403.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "AP",
+      "demand_mw": 6795.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4272.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "CE",
+      "demand_mw": 14148.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 3791.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2587.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 256.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 18830.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2482.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3810.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 19635.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "PE",
+      "demand_mw": 5704.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 9979.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2096.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2009.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "PS",
+      "demand_mw": 5832.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2068.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2633.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "JC",
+      "demand_mw": 3581.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5548.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1618.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2082.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1826.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2573.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2150.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "PE",
+      "demand_mw": 5864.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2119.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 10274.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "PS",
+      "demand_mw": 6170.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "AP",
+      "demand_mw": 7019.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4395.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 20065.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 19256.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3948.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "CE",
+      "demand_mw": 14682.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 3917.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 273.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1697.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1840.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5671.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "PS",
+      "demand_mw": 6372.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2129.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2221.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "JC",
+      "demand_mw": 3743.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 20293.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2692.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 10479.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2651.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 19219.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3973.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "AP",
+      "demand_mw": 7236.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4490.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "CE",
+      "demand_mw": 15107.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 4005.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 280.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "PE",
+      "demand_mw": 5957.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2155.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "PE",
+      "demand_mw": 6083.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2228.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "PS",
+      "demand_mw": 6621.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2178.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2296.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "CE",
+      "demand_mw": 15545.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2789.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 4108.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 286.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1814.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1920.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "JC",
+      "demand_mw": 3980.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "AP",
+      "demand_mw": 7464.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4611.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5826.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 19000.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3942.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 10642.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2716.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 20456.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 20700.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "JC",
+      "demand_mw": 4110.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4712.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "AP",
+      "demand_mw": 7534.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5998.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 10766.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2748.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "PE",
+      "demand_mw": 6135.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2267.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "PS",
+      "demand_mw": 6765.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 283.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 4201.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2843.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "CE",
+      "demand_mw": 15828.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3993.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 18922.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2237.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1939.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1908.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2347.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3994.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 20659.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2342.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "JC",
+      "demand_mw": 4121.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "CE",
+      "demand_mw": 15979.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "PS",
+      "demand_mw": 6766.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2275.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4788.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2752.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "AP",
+      "demand_mw": 7416.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 4218.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2242.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1932.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1922.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 18694.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "PL",
+      "demand_mw": 6077.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 10572.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2853.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "PE",
+      "demand_mw": 6010.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 277.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "JC",
+      "demand_mw": 3953.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "PE",
+      "demand_mw": 5749.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2249.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1877.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 18320.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3933.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 10403.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1867.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "PS",
+      "demand_mw": 6654.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2778.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2682.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "AP",
+      "demand_mw": 7191.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "CE",
+      "demand_mw": 15964.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 4158.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 261.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4658.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5961.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 20311.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2195.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2273.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "CE",
+      "demand_mw": 15623.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 3998.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 242.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "PE",
+      "demand_mw": 5477.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2169.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "PS",
+      "demand_mw": 6449.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5741.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 19804.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 18087.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 9928.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1769.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1894.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "JC",
+      "demand_mw": 3690.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2100.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3819.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2162.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2646.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "AP",
+      "demand_mw": 6862.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4506.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2552.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5534.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 19131.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "CE",
+      "demand_mw": 14929.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "PE",
+      "demand_mw": 5265.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "JC",
+      "demand_mw": 3449.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 3879.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 228.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2083.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "PS",
+      "demand_mw": 6280.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 9429.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2433.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2521.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "AP",
+      "demand_mw": 6579.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4362.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1680.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1878.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 17733.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2033.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2066.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3717.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5137.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 18341.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "JC",
+      "demand_mw": 3122.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "PE",
+      "demand_mw": 4960.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "CE",
+      "demand_mw": 14303.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 3653.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1957.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 209.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "PS",
+      "demand_mw": 5938.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 8843.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2302.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2285.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "AP",
+      "demand_mw": 6187.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4032.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1536.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1910.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1769.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 16973.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3502.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1913.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1765.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 16081.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1621.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3223.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "PL",
+      "demand_mw": 4770.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 17361.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2804.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "CE",
+      "demand_mw": 13434.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 3356.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 190.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "PE",
+      "demand_mw": 4573.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2112.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2068.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1819.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "PS",
+      "demand_mw": 5515.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "AP",
+      "demand_mw": 5758.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 8115.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3657.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1379.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1784.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "PL",
+      "demand_mw": 4456.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1738.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1503.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "PS",
+      "demand_mw": 5127.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 7520.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 1958.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 1884.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 16410.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "AP",
+      "demand_mw": 5408.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3338.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1673.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 15382.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "CE",
+      "demand_mw": 12489.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 3066.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1643.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 174.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 2952.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2518.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "PE",
+      "demand_mw": 4278.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1252.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1577.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1544.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 15809.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 1760.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 7169.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2308.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "PL",
+      "demand_mw": 4219.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 14827.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 1834.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "CE",
+      "demand_mw": 11713.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 2855.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 162.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "PE",
+      "demand_mw": 3997.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1658.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "PS",
+      "demand_mw": 4821.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1163.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "AP",
+      "demand_mw": 5156.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3100.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1363.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 2752.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2167.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 14464.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "CE",
+      "demand_mw": 11067.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 2708.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 153.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 2626.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1524.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1478.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "PE",
+      "demand_mw": 3842.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1606.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "PS",
+      "demand_mw": 4606.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 15319.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "AP",
+      "demand_mw": 4978.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1107.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1301.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "BC",
+      "demand_mw": 2934.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 1681.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "PL",
+      "demand_mw": 4055.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 1753.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 6902.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1462.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1446.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 14305.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 2574.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "PE",
+      "demand_mw": 3766.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1587.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2107.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "PS",
+      "demand_mw": 4486.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "CE",
+      "demand_mw": 10602.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 2622.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 149.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "AP",
+      "demand_mw": 4867.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1080.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1263.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "BC",
+      "demand_mw": 2857.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 6857.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 1704.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "PL",
+      "demand_mw": 3968.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 1640.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 15060.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1455.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 14367.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 1704.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 6879.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 2614.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1450.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2074.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 15109.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "AP",
+      "demand_mw": 4864.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "BC",
+      "demand_mw": 2868.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1075.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1302.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "CE",
+      "demand_mw": 10347.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 2605.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 148.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "PE",
+      "demand_mw": 3772.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1585.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "PS",
+      "demand_mw": 4473.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 1649.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "subba": "PL",
+      "demand_mw": 3997.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 1773.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 1713.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 152.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 2672.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "CE",
+      "demand_mw": 10415.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "PS",
+      "demand_mw": 4543.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2151.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "PL",
+      "demand_mw": 4172.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1667.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 7063.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "PE",
+      "demand_mw": 3910.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "BC",
+      "demand_mw": 2965.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "AP",
+      "demand_mw": 4973.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 14691.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 2783.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1299.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1096.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1485.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 15537.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1514.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 7378.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1411.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "AP",
+      "demand_mw": 5172.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3103.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1782.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "PE",
+      "demand_mw": 4107.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 160.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1140.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 1801.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 2777.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 2981.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "PS",
+      "demand_mw": 4703.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 1878.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1531.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "CE",
+      "demand_mw": 10789.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "PL",
+      "demand_mw": 4442.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 16034.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1618.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2237.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 15152.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2382.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "PE",
+      "demand_mw": 4476.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1899.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 15834.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "PS",
+      "demand_mw": 4984.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2020.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "AP",
+      "demand_mw": 5518.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 1892.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "PL",
+      "demand_mw": 4737.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 8013.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3153.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 16832.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1209.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3326.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1459.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "CE",
+      "demand_mw": 11399.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 2944.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 176.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1630.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1739.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "AP",
+      "demand_mw": 5829.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 8473.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "PL",
+      "demand_mw": 4984.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3507.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2164.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1251.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1422.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 17505.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2538.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 1981.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 16480.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "PE",
+      "demand_mw": 4825.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2017.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "PS",
+      "demand_mw": 5188.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "CE",
+      "demand_mw": 12233.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 3195.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 195.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1740.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3302.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1841.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 17191.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3395.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2715.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 8975.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1272.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2098.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1580.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2320.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 18384.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1846.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1915.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "CE",
+      "demand_mw": 12923.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 3445.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 204.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "PE",
+      "demand_mw": 5072.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2130.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "PS",
+      "demand_mw": 5360.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5184.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "AP",
+      "demand_mw": 6161.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3636.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 9753.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "AP",
+      "demand_mw": 6533.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3776.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2490.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5366.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 19361.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2224.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1294.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1538.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "PE",
+      "demand_mw": 5331.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2250.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "JC",
+      "demand_mw": 2892.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1952.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2005.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "CE",
+      "demand_mw": 13586.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 17943.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3472.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 3719.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 216.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "subba": "PS",
+      "demand_mw": 5563.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2077.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2085.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1347.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1645.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "AP",
+      "demand_mw": 6913.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2344.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3918.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 20376.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "CE",
+      "demand_mw": 14537.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 3970.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 229.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2659.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5499.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "PE",
+      "demand_mw": 5575.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "JC",
+      "demand_mw": 3029.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2354.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "PS",
+      "demand_mw": 5734.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 18467.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 10336.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3575.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "CE",
+      "demand_mw": 15470.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2173.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2201.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 21073.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2819.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 19024.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3688.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1787.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1425.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 10946.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "JC",
+      "demand_mw": 3274.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5662.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "AP",
+      "demand_mw": 7208.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "PS",
+      "demand_mw": 6027.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2414.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4052.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "PE",
+      "demand_mw": 5823.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 243.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2445.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 4204.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "CE",
+      "demand_mw": 16376.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2268.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 265.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "PE",
+      "demand_mw": 6046.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2497.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2282.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 11414.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "PS",
+      "demand_mw": 6318.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3804.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 19563.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5855.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1955.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1506.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4221.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "JC",
+      "demand_mw": 3550.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "AP",
+      "demand_mw": 7479.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 21769.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2957.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 4382.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2550.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "PS",
+      "demand_mw": 6734.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2340.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 20010.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 11717.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3959.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "AP",
+      "demand_mw": 7690.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 22266.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4421.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "JC",
+      "demand_mw": 3843.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2645.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "CE",
+      "demand_mw": 17301.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 4533.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 285.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "PE",
+      "demand_mw": 6247.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2548.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "PL",
+      "demand_mw": 6017.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 3039.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1607.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 2105.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2341.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 3083.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2548.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "PS",
+      "demand_mw": 7076.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 20538.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 4154.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1729.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2754.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2376.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2406.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 2081.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "AP",
+      "demand_mw": 7874.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "JC",
+      "demand_mw": 4104.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "PL",
+      "demand_mw": 6173.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4641.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 22579.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 11943.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "CE",
+      "demand_mw": 17967.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "PE",
+      "demand_mw": 6443.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 4652.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 303.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2479.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "CE",
+      "demand_mw": 18527.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 4729.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 316.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2881.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 22840.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "PL",
+      "demand_mw": 6327.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1857.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 3137.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 20930.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 4349.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "AP",
+      "demand_mw": 8038.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4867.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 2120.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 12021.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "PE",
+      "demand_mw": 6587.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2575.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "PS",
+      "demand_mw": 7417.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2400.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "subba": "JC",
+      "demand_mw": 4319.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "JC",
+      "demand_mw": 4568.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2422.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2548.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 3171.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1984.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 2270.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "PE",
+      "demand_mw": 6707.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "CE",
+      "demand_mw": 18990.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 4777.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 317.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2611.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 21055.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 4525.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "PS",
+      "demand_mw": 7689.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2980.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 12160.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "AP",
+      "demand_mw": 8162.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "BC",
+      "demand_mw": 5055.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 22997.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "subba": "PL",
+      "demand_mw": 6487.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "PE",
+      "demand_mw": 6592.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 4750.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "PS",
+      "demand_mw": 7732.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "PL",
+      "demand_mw": 6494.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 4514.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 3149.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 11951.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 3020.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "AE",
+      "demand_mw": 2038.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 20882.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2574.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2541.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 2234.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2394.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "JC",
+      "demand_mw": 4539.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "BC",
+      "demand_mw": 5101.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "AP",
+      "demand_mw": 8120.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "CE",
+      "demand_mw": 19205.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 308.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 22871.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 4394.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 20511.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "PE",
+      "demand_mw": 6265.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2510.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "PS",
+      "demand_mw": 7625.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "CE",
+      "demand_mw": 19146.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4985.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "AP",
+      "demand_mw": 7962.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "JC",
+      "demand_mw": 4371.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 4634.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2469.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 3061.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "PL",
+      "demand_mw": 6404.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2336.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 22476.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1981.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 2077.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2973.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 11614.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 291.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2929.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "CE",
+      "demand_mw": 18789.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 4409.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 272.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "PL",
+      "demand_mw": 6131.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 11052.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2800.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 19829.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 4173.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "PE",
+      "demand_mw": 5904.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "AP",
+      "demand_mw": 7560.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4735.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2406.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1844.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 2001.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "PS",
+      "demand_mw": 7356.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "JC",
+      "demand_mw": 4110.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2238.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 21928.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2361.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5877.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2777.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "PE",
+      "demand_mw": 5654.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2307.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 21016.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2639.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 10462.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "PS",
+      "demand_mw": 7087.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "JC",
+      "demand_mw": 3823.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1730.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1942.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "AP",
+      "demand_mw": 7198.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4507.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "CE",
+      "demand_mw": 18013.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 4226.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 256.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2148.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 19130.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3975.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2229.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 19907.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2391.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 9645.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2590.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1576.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1754.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5455.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "PE",
+      "demand_mw": 5259.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "JC",
+      "demand_mw": 3451.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "CE",
+      "demand_mw": 17218.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "PN",
+      "demand_mw": 2110.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 18016.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 3972.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "AP",
+      "demand_mw": 6697.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "BC",
+      "demand_mw": 4129.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 234.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "PS",
+      "demand_mw": 6610.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3687.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 2014.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "subba": "ME",
+      "demand_mw": 2048.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "DPL",
+      "demand_mw": 2142.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "AEP",
+      "demand_mw": 18551.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "PL",
+      "demand_mw": 5027.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "DUQ",
+      "demand_mw": 1877.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "ME",
+      "demand_mw": 1872.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "AP",
+      "demand_mw": 6132.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "BC",
+      "demand_mw": 3740.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "CE",
+      "demand_mw": 16085.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "DEOK",
+      "demand_mw": 3669.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "RECO",
+      "demand_mw": 214.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "DOM",
+      "demand_mw": 16871.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "JC",
+      "demand_mw": 3103.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "PEP",
+      "demand_mw": 3374.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "PE",
+      "demand_mw": 4834.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "PN",
+      "demand_mw": 1951.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "AE",
+      "demand_mw": 1419.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "EKPC",
+      "demand_mw": 1583.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "PS",
+      "demand_mw": 6097.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "ATSI",
+      "demand_mw": 8853.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "subba": "DAY",
+      "demand_mw": 2373.0
+    }
+  ],
+  "carbon_intensity": [
+    {
+      "period": "2026-07-12T05:00:00Z",
+      "carbon_intensity": 390.1254271587,
+      "total_generation": 104762.0
+    },
+    {
+      "period": "2026-07-12T06:00:00Z",
+      "carbon_intensity": 378.2382320137,
+      "total_generation": 101313.0
+    },
+    {
+      "period": "2026-07-12T07:00:00Z",
+      "carbon_intensity": 374.5244895907,
+      "total_generation": 99430.0
+    },
+    {
+      "period": "2026-07-12T08:00:00Z",
+      "carbon_intensity": 369.1603738549,
+      "total_generation": 96936.0
+    },
+    {
+      "period": "2026-07-12T09:00:00Z",
+      "carbon_intensity": 364.0448927855,
+      "total_generation": 94670.0
+    },
+    {
+      "period": "2026-07-12T10:00:00Z",
+      "carbon_intensity": 361.5135757214,
+      "total_generation": 93844.0
+    },
+    {
+      "period": "2026-07-12T11:00:00Z",
+      "carbon_intensity": 360.8332088676,
+      "total_generation": 93734.0
+    },
+    {
+      "period": "2026-07-12T12:00:00Z",
+      "carbon_intensity": 353.2026620958,
+      "total_generation": 94512.0
+    },
+    {
+      "period": "2026-07-12T13:00:00Z",
+      "carbon_intensity": 345.098973607,
+      "total_generation": 98208.0
+    },
+    {
+      "period": "2026-07-12T14:00:00Z",
+      "carbon_intensity": 346.9715666017,
+      "total_generation": 103083.0
+    },
+    {
+      "period": "2026-07-12T15:00:00Z",
+      "carbon_intensity": 346.9835723404,
+      "total_generation": 107319.0
+    },
+    {
+      "period": "2026-07-12T16:00:00Z",
+      "carbon_intensity": 347.6785264143,
+      "total_generation": 111076.0
+    },
+    {
+      "period": "2026-07-12T17:00:00Z",
+      "carbon_intensity": 351.9883020756,
+      "total_generation": 115918.0
+    },
+    {
+      "period": "2026-07-12T18:00:00Z",
+      "carbon_intensity": 358.0796557756,
+      "total_generation": 120619.0
+    },
+    {
+      "period": "2026-07-12T19:00:00Z",
+      "carbon_intensity": 359.4458310112,
+      "total_generation": 123807.0
+    },
+    {
+      "period": "2026-07-12T20:00:00Z",
+      "carbon_intensity": 360.844990894,
+      "total_generation": 125741.0
+    },
+    {
+      "period": "2026-07-12T21:00:00Z",
+      "carbon_intensity": 365.3921836141,
+      "total_generation": 128269.0
+    },
+    {
+      "period": "2026-07-12T22:00:00Z",
+      "carbon_intensity": 367.136541002,
+      "total_generation": 130957.0
+    },
+    {
+      "period": "2026-07-12T23:00:00Z",
+      "carbon_intensity": 379.2195018129,
+      "total_generation": 131557.0
+    },
+    {
+      "period": "2026-07-13T00:00:00Z",
+      "carbon_intensity": 388.3748976515,
+      "total_generation": 130681.0
+    },
+    {
+      "period": "2026-07-13T01:00:00Z",
+      "carbon_intensity": 400.0002352646,
+      "total_generation": 127516.0
+    },
+    {
+      "period": "2026-07-13T02:00:00Z",
+      "carbon_intensity": 400.5004938551,
+      "total_generation": 123518.0
+    },
+    {
+      "period": "2026-07-13T03:00:00Z",
+      "carbon_intensity": 400.4969774372,
+      "total_generation": 117450.0
+    },
+    {
+      "period": "2026-07-13T04:00:00Z",
+      "carbon_intensity": 399.6844684243,
+      "total_generation": 111019.0
+    },
+    {
+      "period": "2026-07-13T05:00:00Z",
+      "carbon_intensity": 392.1163313508,
+      "total_generation": 105423.0
+    },
+    {
+      "period": "2026-07-13T06:00:00Z",
+      "carbon_intensity": 382.3188893064,
+      "total_generation": 101126.0
+    },
+    {
+      "period": "2026-07-13T07:00:00Z",
+      "carbon_intensity": 376.0308669626,
+      "total_generation": 98228.0
+    },
+    {
+      "period": "2026-07-13T08:00:00Z",
+      "carbon_intensity": 372.888798811,
+      "total_generation": 96213.0
+    },
+    {
+      "period": "2026-07-13T09:00:00Z",
+      "carbon_intensity": 371.6726314795,
+      "total_generation": 95281.0
+    },
+    {
+      "period": "2026-07-13T10:00:00Z",
+      "carbon_intensity": 372.8426631471,
+      "total_generation": 96983.0
+    },
+    {
+      "period": "2026-07-13T11:00:00Z",
+      "carbon_intensity": 375.1526909391,
+      "total_generation": 99482.0
+    },
+    {
+      "period": "2026-07-13T12:00:00Z",
+      "carbon_intensity": 364.0286174733,
+      "total_generation": 102385.0
+    },
+    {
+      "period": "2026-07-13T13:00:00Z",
+      "carbon_intensity": 349.0270758632,
+      "total_generation": 106257.0
+    },
+    {
+      "period": "2026-07-13T14:00:00Z",
+      "carbon_intensity": 343.3379168099,
+      "total_generation": 110542.0
+    },
+    {
+      "period": "2026-07-13T15:00:00Z",
+      "carbon_intensity": 346.6767602273,
+      "total_generation": 115255.0
+    },
+    {
+      "period": "2026-07-13T16:00:00Z",
+      "carbon_intensity": 352.4071469587,
+      "total_generation": 120163.0
+    },
+    {
+      "period": "2026-07-13T17:00:00Z",
+      "carbon_intensity": 355.840026854,
+      "total_generation": 125121.0
+    },
+    {
+      "period": "2026-07-13T18:00:00Z",
+      "carbon_intensity": 364.9854144596,
+      "total_generation": 130266.0
+    },
+    {
+      "period": "2026-07-13T19:00:00Z",
+      "carbon_intensity": 365.0131371519,
+      "total_generation": 135113.0
+    },
+    {
+      "period": "2026-07-13T20:00:00Z",
+      "carbon_intensity": 369.7257818158,
+      "total_generation": 139451.0
+    },
+    {
+      "period": "2026-07-13T21:00:00Z",
+      "carbon_intensity": 373.6918833727,
+      "total_generation": 142128.0
+    },
+    {
+      "period": "2026-07-13T22:00:00Z",
+      "carbon_intensity": 380.7752333421,
+      "total_generation": 145066.0
+    },
+    {
+      "period": "2026-07-13T23:00:00Z",
+      "carbon_intensity": 387.4487071872,
+      "total_generation": 145342.0
+    },
+    {
+      "period": "2026-07-14T00:00:00Z",
+      "carbon_intensity": 399.8775926081,
+      "total_generation": 143292.0
+    },
+    {
+      "period": "2026-07-14T01:00:00Z",
+      "carbon_intensity": 411.1514165047,
+      "total_generation": 139463.0
+    },
+    {
+      "period": "2026-07-14T02:00:00Z",
+      "carbon_intensity": 412.6133742704,
+      "total_generation": 134841.0
+    },
+    {
+      "period": "2026-07-14T03:00:00Z",
+      "carbon_intensity": 415.0726473732,
+      "total_generation": 126295.0
+    },
+    {
+      "period": "2026-07-14T04:00:00Z",
+      "carbon_intensity": 416.3857638212,
+      "total_generation": 117953.0
+    }
+  ],
+  "zones": [
+    {
+      "code": "AE",
+      "name": "Atlantic Electric",
+      "lat": 39.3643,
+      "lon": -74.4229
+    },
+    {
+      "code": "AEP",
+      "name": "American Electric Power",
+      "lat": 39.9612,
+      "lon": -82.9988
+    },
+    {
+      "code": "AP",
+      "name": "Allegheny Power",
+      "lat": 40.4406,
+      "lon": -79.9959
+    },
+    {
+      "code": "ATSI",
+      "name": "American Transmission Systems, Inc.",
+      "lat": 41.0814,
+      "lon": -81.519
+    },
+    {
+      "code": "BC",
+      "name": "Baltimore Gas & Electric",
+      "lat": 39.2904,
+      "lon": -76.6122
+    },
+    {
+      "code": "CE",
+      "name": "Commonwealth Edison",
+      "lat": 41.8781,
+      "lon": -87.6298
+    },
+    {
+      "code": "DAY",
+      "name": "Dayton Power & Light",
+      "lat": 39.7589,
+      "lon": -84.1916
+    },
+    {
+      "code": "DEOK",
+      "name": "Duke Energy Ohio/Kentucky",
+      "lat": 39.1031,
+      "lon": -84.512
+    },
+    {
+      "code": "DOM",
+      "name": "Dominion Virginia Power",
+      "lat": 37.5407,
+      "lon": -77.436
+    },
+    {
+      "code": "DPL",
+      "name": "Delmarva Power & Light",
+      "lat": 39.7391,
+      "lon": -75.5398
+    },
+    {
+      "code": "DUQ",
+      "name": "Duquesne Lighting Company",
+      "lat": 40.4406,
+      "lon": -79.9959
+    },
+    {
+      "code": "EKPC",
+      "name": "East Kentucky Power Cooperative",
+      "lat": 38.0406,
+      "lon": -84.5037
+    },
+    {
+      "code": "JC",
+      "name": "Jersey Central Power & Light",
+      "lat": 40.7357,
+      "lon": -74.1724
+    },
+    {
+      "code": "ME",
+      "name": "Metropolitan Edison",
+      "lat": 40.3356,
+      "lon": -75.9269
+    },
+    {
+      "code": "PE",
+      "name": "PECO Energy",
+      "lat": 39.9526,
+      "lon": -75.1652
+    },
+    {
+      "code": "PEP",
+      "name": "Potomac Electric Power",
+      "lat": 38.9072,
+      "lon": -77.0369
+    },
+    {
+      "code": "PL",
+      "name": "Pennsylvania Power & Light",
+      "lat": 40.6084,
+      "lon": -75.4902
+    },
+    {
+      "code": "PN",
+      "name": "Pennsylvania Electric",
+      "lat": 40.3267,
+      "lon": -78.922
+    },
+    {
+      "code": "PS",
+      "name": "Public Service Electric & Gas",
+      "lat": 40.4862,
+      "lon": -74.4518
+    },
+    {
+      "code": "RECO",
+      "name": "Rockland Electric (East)",
+      "lat": 41.1128,
+      "lon": -74.1494
+    }
+  ],
+  "generated_at": "2026-07-15T13:04:45Z"
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GridFlex — PJM Live</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0B0E11;
+    --panel: #12171C;
+    --line: #1E2830;
+    --text: #E6EDF0;
+    --muted: #7C8A93;
+    --amber: #F0A868;
+    --teal: #4FD1C5;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; background: var(--bg); color: var(--text); font-family: var(--sans); }
+
+  #app { display: flex; flex-direction: column; height: 100vh; }
+
+  /* ---- Top instrument bar ---- */
+  header {
+    display: flex; align-items: center; gap: 32px;
+    padding: 14px 20px; background: var(--panel);
+    border-bottom: 1px solid var(--line); flex-shrink: 0;
+    flex-wrap: wrap;
+  }
+  .brand { font-family: var(--mono); font-weight: 700; font-size: 15px; letter-spacing: 0.02em; }
+  .brand span { color: var(--muted); font-weight: 400; }
+  .readout { display: flex; flex-direction: column; gap: 2px; }
+  .readout .label { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .readout .value { font-family: var(--mono); font-size: 22px; font-weight: 500; line-height: 1; }
+  .readout .value.carbon { color: var(--amber); }
+  .readout .value.demand { color: var(--teal); }
+  .readout .unit { font-size: 11px; color: var(--muted); font-weight: 400; }
+  header .spacer { flex: 1; }
+  .status { font-family: var(--mono); font-size: 11px; color: var(--muted); text-align: right; }
+  .status .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); margin-right: 6px; }
+
+  /* ---- Map ---- */
+  #map { flex: 1; min-height: 0; background: var(--bg); }
+  .leaflet-container { background: var(--bg) !important; }
+
+  /* ---- Bottom scrubber (signature element) ---- */
+  #scrubber-panel {
+    background: var(--panel); border-top: 1px solid var(--line);
+    padding: 10px 20px 16px; flex-shrink: 0;
+  }
+  #scrubber-panel .caption {
+    font-family: var(--mono); font-size: 10px; color: var(--muted);
+    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px;
+    display: flex; justify-content: space-between;
+  }
+  #scrubber-svg { width: 100%; height: 70px; display: block; cursor: crosshair; touch-action: none; }
+  #scrubber-svg .trace { fill: none; stroke: var(--amber); stroke-width: 1.5; }
+  #scrubber-svg .grid-line { stroke: var(--line); stroke-width: 1; }
+  #scrubber-svg .playhead { stroke: var(--teal); stroke-width: 1.5; }
+  #scrubber-svg .playhead-dot { fill: var(--teal); }
+
+  .leaflet-popup-content-wrapper { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 4px; }
+  .leaflet-popup-content { font-family: var(--mono); font-size: 12px; margin: 8px 12px; }
+  .leaflet-popup-tip { background: var(--panel); }
+
+  @media (max-width: 640px) {
+    header { gap: 18px; }
+    .readout .value { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <div class="brand">GRIDFLEX <span>// PJM live</span></div>
+    <div class="readout">
+      <span class="label">Carbon intensity</span>
+      <span class="value carbon" id="readout-carbon">—</span>
+    </div>
+    <div class="readout">
+      <span class="label">System demand</span>
+      <span class="value demand" id="readout-demand">—</span>
+    </div>
+    <div class="spacer"></div>
+    <div class="status" id="status"><span class="dot"></span>loading…</div>
+  </header>
+
+  <div id="map"></div>
+
+  <div id="scrubber-panel">
+    <div class="caption">
+      <span id="scrubber-label">carbon intensity, last 48h — drag to scrub</span>
+      <span id="scrubber-time">—</span>
+    </div>
+    <svg id="scrubber-svg" viewBox="0 0 1000 70" preserveAspectRatio="none"></svg>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(async function () {
+  const CARBON_COLOR = '#F0A868';
+  const AMBER = '#F0A868', TEAL = '#4FD1C5';
+
+  const res = await fetch('data/latest.json', { cache: 'no-store' });
+  const payload = await res.json();
+
+  const zones = payload.zones;                 // [{code, name, lat, lon}]
+  const demandRows = payload.zone_demand;       // [{period, subba, demand_mw}]
+  const carbonRows = payload.carbon_intensity;  // [{period, carbon_intensity, total_generation}]
+
+  // ---- Index demand by period -> {zoneCode: mw} ----
+  const demandByPeriod = new Map();
+  for (const row of demandRows) {
+    if (!demandByPeriod.has(row.period)) demandByPeriod.set(row.period, {});
+    demandByPeriod.get(row.period)[row.subba] = row.demand_mw;
+  }
+  const periods = [...new Set(demandRows.map(r => r.period))].sort();
+  const carbonByPeriod = new Map(carbonRows.map(r => [r.period, r.carbon_intensity]));
+
+  let selectedIdx = periods.length - 1; // default: latest hour
+
+  // ---- Map setup ----
+  const map = L.map('map', { zoomControl: true, attributionControl: true })
+    .setView([39.9, -78.5], 6);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap &copy; CARTO',
+    subdomains: 'abcd', maxZoom: 19,
+  }).addTo(map);
+
+  // radius scale: area-proportional (sqrt), clamped to a sane pixel range
+  const allDemandValues = demandRows.map(r => r.demand_mw);
+  const maxDemand = Math.max(...allDemandValues);
+  function radiusFor(mw) {
+    const r = 6 + 34 * Math.sqrt(mw / maxDemand);
+    return Math.max(6, r);
+  }
+  function colorFor(mw) {
+    // relative to this hour's own max — amber = relatively high, teal = relatively low
+    const t = Math.sqrt(mw / maxDemand);
+    return t > 0.55 ? AMBER : TEAL;
+  }
+
+  const markers = {};
+  for (const z of zones) {
+    const m = L.circleMarker([z.lat, z.lon], {
+      radius: 10, color: TEAL, weight: 1.5, fillColor: TEAL, fillOpacity: 0.35,
+    }).addTo(map);
+    m.bindPopup('');
+    markers[z.code] = m;
+  }
+
+  function renderHour(idx) {
+    const period = periods[idx];
+    const demand = demandByPeriod.get(period) || {};
+    let total = 0;
+    for (const z of zones) {
+      const mw = demand[z.code];
+      const marker = markers[z.code];
+      if (mw == null) { marker.setStyle({ opacity: 0.15, fillOpacity: 0.05 }); continue; }
+      total += mw;
+      const col = colorFor(mw);
+      marker.setStyle({ radius: radiusFor(mw), color: col, fillColor: col, fillOpacity: 0.35, opacity: 0.9 });
+      marker.setPopupContent(`${z.name} (${z.code})<br>${mw.toLocaleString()} MW`);
+    }
+    const carbon = carbonByPeriod.get(period);
+    document.getElementById('readout-carbon').textContent =
+      carbon != null ? Math.round(carbon).toLocaleString() : '—';
+    document.getElementById('readout-carbon').nextElementSibling;
+    document.getElementById('readout-demand').textContent = Math.round(total).toLocaleString();
+    document.getElementById('scrubber-time').textContent =
+      new Date(period).toUTCString().replace(':00 GMT', ' UTC');
+  }
+
+  // ---- Scrubber (signature element): SVG trace of carbon intensity ----
+  const svg = document.getElementById('scrubber-svg');
+  const W = 1000, H = 70, PAD = 4;
+  // Missing carbon data (e.g. fuel-type-data publishes with more lag than
+  // demand data) must NOT be plotted as 0 — that falsely implies a
+  // near-zero-carbon grid. Build the trace as separate path segments,
+  // breaking at any gap, and track which indices actually have data.
+  const hasCarbon = periods.map(p => carbonByPeriod.has(p));
+  const carbonSeries = periods.map(p => carbonByPeriod.get(p) ?? null);
+  const validValues = carbonSeries.filter(v => v != null);
+  const cMin = Math.min(...validValues), cMax = Math.max(...validValues);
+  function xFor(i) { return (i / (periods.length - 1)) * (W - 2 * PAD) + PAD; }
+  function yFor(v) {
+    if (cMax === cMin) return H / 2;
+    return H - PAD - ((v - cMin) / (cMax - cMin)) * (H - 2 * PAD);
+  }
+  let segments = [], current = [];
+  carbonSeries.forEach((v, i) => {
+    if (v == null) { if (current.length) segments.push(current); current = []; return; }
+    current.push(`${current.length === 0 ? 'M' : 'L'} ${xFor(i)} ${yFor(v)}`);
+  });
+  if (current.length) segments.push(current);
+  const pathD = segments.map(seg => seg.join(' ')).join(' ');
+  const firstValidIdx = hasCarbon.indexOf(true);
+
+  svg.innerHTML = `
+    <line class="grid-line" x1="0" y1="${H/2}" x2="${W}" y2="${H/2}" />
+    ${firstValidIdx > 0 ? `<rect x="0" y="0" width="${xFor(firstValidIdx)}" height="${H}" fill="var(--line)" opacity="0.4" />` : ''}
+    <path class="trace" d="${pathD}" />
+    <line class="playhead" id="playhead-line" x1="0" y1="0" x2="0" y2="${H}" />
+    <circle class="playhead-dot" id="playhead-dot" r="3" />
+  `;
+  const playheadLine = document.getElementById('playhead-line');
+  const playheadDot = document.getElementById('playhead-dot');
+
+  function updatePlayhead(idx) {
+    const x = xFor(idx);
+    playheadLine.setAttribute('x1', x); playheadLine.setAttribute('x2', x);
+    const v = carbonSeries[idx];
+    playheadDot.style.display = v == null ? 'none' : '';
+    if (v != null) { playheadDot.setAttribute('cx', x); playheadDot.setAttribute('cy', yFor(v)); }
+  }
+
+  function idxFromClientX(clientX) {
+    const rect = svg.getBoundingClientRect();
+    const frac = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
+    return Math.round(frac * (periods.length - 1));
+  }
+
+  function setSelected(idx) {
+    selectedIdx = Math.min(periods.length - 1, Math.max(0, idx));
+    updatePlayhead(selectedIdx);
+    renderHour(selectedIdx);
+  }
+
+  let dragging = false;
+  svg.addEventListener('pointerdown', e => { dragging = true; setSelected(idxFromClientX(e.clientX)); });
+  window.addEventListener('pointermove', e => { if (dragging) setSelected(idxFromClientX(e.clientX)); });
+  window.addEventListener('pointerup', () => { dragging = false; });
+
+  // ---- Initial render ----
+  setSelected(periods.length - 1);
+  document.getElementById('status').innerHTML =
+    `<span class="dot"></span>updated ${new Date(payload.generated_at).toUTCString()}`;
+})().catch(err => {
+  document.getElementById('status').textContent = 'failed to load data — ' + err.message;
+  console.error(err);
+});
+</script>
+</body>
+</html>
