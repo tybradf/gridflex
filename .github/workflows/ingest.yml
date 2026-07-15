@@ -47,6 +47,21 @@ jobs:
         env:
           EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
 
+      - name: Regenerate site data
+        run: python -m gridflex.features.export
+
+      - name: Commit updated site data
+        # site/data/latest.json IS committed to git (unlike the DB) — it's
+        # small and gets overwritten in place, not grown, so no bloat risk.
+        # This is also what makes Pages "live": Pages serves whatever's in
+        # git, so the JSON has to land there for the site to actually update.
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add site/data/latest.json
+          git diff --staged --quiet || git commit -m "Auto-update site data"
+          git push
+
       - name: Upload updated data snapshot
         run: gh release upload data-latest data/gridflex.duckdb --clobber
         env:

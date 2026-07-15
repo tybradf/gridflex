@@ -3,6 +3,8 @@ name: Tests
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'site/data/**'   # the daily cron's auto-commit — don't re-run tests for a data update
   pull_request:
 
 jobs:
