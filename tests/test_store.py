@@ -8,7 +8,7 @@ def test_schema_creates_clean(tmp_db):
     counts = row_counts(con)
     assert counts == {
         "pjm_demand": 0, "pjm_forecast": 0,
-        "subba_demand": 0, "fuel_mix": 0, "weather": 0,
+        "subba_demand": 0, "fuel_mix": 0, "weather": 0, "forecasts": 0,
     }
     con.close()
 

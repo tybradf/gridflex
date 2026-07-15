@@ -23,6 +23,7 @@ SCHEMAS: dict[str, list[str]] = {
     "subba_demand": ["period", "subba"],  # zone-level
     "fuel_mix": ["period", "fueltype"],  # fuel-level
     "weather": ["period", "subba"],  # zone-level, joined 1:1 with subba_demand
+    "forecasts": ["period"],  # our own live model output, block 3.6
 }
 
 _DDL = {
@@ -73,6 +74,14 @@ _DDL = {
             PRIMARY KEY (period, subba)
         )
     """,
+    "forecasts": """
+        CREATE TABLE IF NOT EXISTS forecasts (
+            period TIMESTAMPTZ NOT NULL,
+            predicted_demand DOUBLE,
+            generated_at TIMESTAMPTZ,
+            PRIMARY KEY (period)
+        )
+    """,
 }
 
 
@@ -90,6 +99,7 @@ TABLE_COLUMNS: dict[str, list[str]] = {
         "period", "subba", "temperature_2m",
         "relative_humidity_2m", "wind_speed_10m", "shortwave_radiation",
     ],
+    "forecasts": ["period", "predicted_demand", "generated_at"],
 }
 
 
