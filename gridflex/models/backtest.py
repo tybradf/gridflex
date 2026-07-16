@@ -62,6 +62,45 @@ def walk_forward_splits(
     return splits
 
 
+def calendar_fold_windows(
+    reference_df: pd.DataFrame,
+    n_splits: int = 5,
+    test_size_hours: int = 24,
+    min_train_hours: int = 24 * 90,
+) -> list[tuple[pd.Timestamp, pd.Timestamp, pd.Timestamp]]:
+    """Derives fold boundaries as (train_end, test_start, test_end)
+    TIMESTAMPS from a reference dataframe — not row positions. Critical for
+    cross-zone aggregation (Week 4): walk_forward_splits is positional, so
+    independently backtesting 20 zones with slightly different row counts
+    (one zone missing a data-quality-flagged hour another doesn't) would
+    silently misalign "fold 3" across zones to different real calendar
+    hours. Deriving the windows ONCE here, then slicing every zone's data
+    by these same timestamps (see slice_by_window), makes alignment exact
+    regardless of any per-zone row-count differences.
+    """
+    reference_df = reference_df.sort_values("period").reset_index(drop=True)
+    splits = walk_forward_splits(reference_df, n_splits, test_size_hours, min_train_hours)
+    windows = []
+    for train_idx, test_idx in splits:
+        train_end = reference_df["period"].iloc[train_idx[-1]]
+        test_start = reference_df["period"].iloc[test_idx[0]]
+        test_end = reference_df["period"].iloc[test_idx[-1]]
+        windows.append((train_end, test_start, test_end))
+    return windows
+
+
+def slice_by_window(
+    df: pd.DataFrame, train_end: pd.Timestamp, test_start: pd.Timestamp, test_end: pd.Timestamp
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Slices ANY dataframe (e.g. a single zone's table) by calendar
+    timestamp against a fold window derived elsewhere — the counterpart to
+    calendar_fold_windows. Train = everything up to and including
+    train_end; test = the closed interval [test_start, test_end]."""
+    train_df = df[df["period"] <= train_end]
+    test_df = df[(df["period"] >= test_start) & (df["period"] <= test_end)]
+    return train_df, test_df
+
+
 def compute_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> dict[str, float]:
     y_true, y_pred = np.asarray(y_true, dtype=float), np.asarray(y_pred, dtype=float)
     err = y_pred - y_true

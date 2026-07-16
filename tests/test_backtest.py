@@ -62,3 +62,56 @@ def test_run_backtest_is_model_agnostic():
     assert len(results) == 5
     assert (results["n"] == 48).all()
     assert {"mae", "rmse", "mape"}.issubset(results.columns)
+
+
+def test_calendar_windows_align_zones_despite_gap_in_training_region():
+    """The core Week 4 correctness requirement: a zone-specific gap must
+    never silently misalign cross-zone fold comparisons. Gap in the
+    training region -> both zones still get identical, full test windows."""
+    from gridflex.models.backtest import calendar_fold_windows, slice_by_window
+
+    n = 24 * 90 + 5 * 24 + 20
+    periods = pd.date_range("2024-01-01", periods=n, freq="h", tz="UTC")
+    reference_df = pd.DataFrame({"period": periods, "demand": np.arange(n, dtype=float)})
+    zone_a = pd.DataFrame({"period": periods, "demand": np.arange(n, dtype=float) * 10})
+
+    zone_b_periods = periods.delete(range(1000, 1050))
+    zone_b = pd.DataFrame({
+        "period": zone_b_periods,
+        "demand": np.arange(len(zone_b_periods), dtype=float) * 100,
+    })
+
+    windows = calendar_fold_windows(reference_df, n_splits=5, test_size_hours=24, min_train_hours=24 * 90)
+    train_end, test_start, test_end = windows[0]
+    _, test_a = slice_by_window(zone_a, train_end, test_start, test_end)
+    _, test_b = slice_by_window(zone_b, train_end, test_start, test_end)
+
+    assert set(test_b["period"]).issubset(set(test_a["period"]))
+    assert len(test_a) == 24
+
+
+def test_calendar_windows_surface_gap_inside_test_window_honestly():
+    """A gap falling INSIDE a test window must show up as fewer real rows
+    covering a genuine subset of the correct hours — never a silently
+    shifted/wrong set of periods (which is what position-based splitting
+    would produce)."""
+    from gridflex.models.backtest import calendar_fold_windows, slice_by_window
+
+    n = 24 * 90 + 5 * 24 + 20
+    periods = pd.date_range("2024-01-01", periods=n, freq="h", tz="UTC")
+    reference_df = pd.DataFrame({"period": periods, "demand": np.arange(n, dtype=float)})
+    zone_a = pd.DataFrame({"period": periods, "demand": np.arange(n, dtype=float) * 10})
+
+    windows = calendar_fold_windows(reference_df, n_splits=5, test_size_hours=24, min_train_hours=24 * 90)
+    train_end, test_start, test_end = windows[2]
+
+    gap_start_idx = periods.get_loc(test_start) + 3
+    zone_c_periods = periods.delete(range(gap_start_idx, gap_start_idx + 5))
+    zone_c = pd.DataFrame({"period": zone_c_periods, "demand": np.arange(len(zone_c_periods), dtype=float)})
+
+    _, test_a = slice_by_window(zone_a, train_end, test_start, test_end)
+    _, test_c = slice_by_window(zone_c, train_end, test_start, test_end)
+
+    assert len(test_a) == 24
+    assert len(test_c) == 19
+    assert set(test_c["period"]).issubset(set(test_a["period"]))

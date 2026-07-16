@@ -77,6 +77,37 @@ def test_drops_rows_without_full_lag_history(tmp_db):
     assert len(df) == 200 - 168
 
 
+def test_null_mid_series_does_not_leave_nan_lags(tmp_db):
+    """Regression test: a real bug found via 'dropped 400 rows instead of
+    168'. A null demand value mid-series creates NaN in THREE separate
+    downstream rows (lag_24h, lag_48h, lag_168h each in a different row) —
+    checking only lag_168h let the lag_24h/lag_48h cases silently through."""
+    from gridflex.store.db import get_connection
+    con = get_connection()
+    periods = pd.date_range("2024-01-01", periods=300, freq="h", tz="UTC")
+    values = [100_000.0 + i for i in range(300)]
+    values[200] = float("nan")  # well past the 168h startup window
+
+    upsert(con, "pjm_demand", pd.DataFrame({
+        "period": periods, "respondent": ["PJM"] * 300, "type": ["D"] * 300, "value": values,
+    }))
+    upsert(con, "subba_demand", pd.DataFrame({
+        "period": list(periods) * 2, "subba": ["PE"] * 300 + ["CE"] * 300,
+        "parent": ["PJM"] * 600, "value": [100.0] * 300 + [300.0] * 300,
+    }))
+    upsert(con, "weather", pd.DataFrame({
+        "period": list(periods) * 2, "subba": ["PE"] * 300 + ["CE"] * 300,
+        "temperature_2m": [20.0] * 600, "relative_humidity_2m": [50.0] * 600,
+        "wind_speed_10m": [5.0] * 600, "shortwave_radiation": [100.0] * 600,
+    }))
+
+    df = build_training_table(con)
+    con.close()
+
+    lag_cols = [c for c in df.columns if c.startswith("lag_") and c.endswith("h")]
+    assert not df[lag_cols].isna().any().any()
+
+
 def test_holiday_flag_fires_on_july_4th_only(tmp_db):
     from gridflex.store.db import get_connection
     con = get_connection()

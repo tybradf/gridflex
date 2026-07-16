@@ -101,12 +101,66 @@ def _weighted_weather(con: duckdb.DuckDBPyConnection, weights: pd.Series) -> pd.
     return weighted_weather_from_df(weather_df, weights)
 
 
+def _assemble_features(demand_df: pd.DataFrame, weather_agg_df: pd.DataFrame) -> pd.DataFrame:
+    """Shared feature assembly: calendar features, HDD/CDD, lags, dropna.
+    Used by BOTH build_training_table (system-level) and
+    build_zone_training_table (per-zone, Week 4) — one implementation, not
+    two that could quietly drift apart, same philosophy as
+    weighted_weather_from_df.
+
+    demand_df: columns (period, demand).
+    weather_agg_df: columns (period, temp_mean, humidity_mean, wind_mean,
+    solar_mean) — either the demand-weighted system aggregate, or a single
+    zone's own raw weather, renamed to the same column names so this
+    function (and FEATURE_COLUMNS, and the model code) doesn't need to know
+    or care which.
+    """
+    df = demand_df.merge(weather_agg_df, on="period", how="left")
+    df = df.sort_values("period").reset_index(drop=True)
+
+    df["hdd"] = (DEGREE_DAY_BASE_C - df["temp_mean"]).clip(lower=0)
+    df["cdd"] = (df["temp_mean"] - DEGREE_DAY_BASE_C).clip(lower=0)
+
+    df["hour"] = df["period"].dt.hour
+    df["dow"] = df["period"].dt.dayofweek  # 0=Mon
+    df["month"] = df["period"].dt.month
+    df["is_weekend"] = (df["dow"] >= 5).astype(int)
+    df["is_holiday"] = df["period"].dt.date.astype("datetime64[ns]").isin(
+        pd.to_datetime(list(US_HOLIDAYS.keys()))
+    ).astype(int)
+
+    # INVARIANT: every lag length here must be >= the backtest's
+    # test_size_hours (default 24h, see gridflex/models/backtest.py), or it
+    # silently leaks within-horizon actuals that a real day-ahead forecast
+    # would never have. lag_1h/lag_2h were tried and REMOVED after producing
+    # an implausibly good backtest result — PJM's real forecast horizon is
+    # ~24h, never 1-2h.
+    df["lag_24h"] = df["demand"].shift(24)
+    df["lag_48h"] = df["demand"].shift(48)
+    df["lag_168h"] = df["demand"].shift(168)
+
+    n_before = len(df)
+    # Check ALL lag columns, not just lag_168h — see the Week 3 dropna
+    # symmetry fix. A null mid-series creates NaN in three different
+    # downstream rows (one per lag length), not the same row three times.
+    lag_cols = [c for c in df.columns if c.startswith("lag_") and c.endswith("h")]
+    df = df.dropna(subset=[*lag_cols, "demand"]).reset_index(drop=True)
+    n_dropped = n_before - len(df)
+    if n_dropped:
+        import logging
+        logging.getLogger(__name__).info(
+            "_assemble_features: dropped %d row(s) lacking full lag history "
+            "(expected — needs 168h of prior data)", n_dropped
+        )
+
+    return df
+
+
 def build_training_table(
     con: duckdb.DuckDBPyConnection, weights_as_of: pd.Timestamp | None = None
 ) -> pd.DataFrame:
-    """One row per hour: target demand, calendar features, lags, weather.
-    Rows without enough history for the longest lag (168h = 1 week) are
-    dropped — this is standard for lag-feature construction, not a bug.
+    """One row per hour: system-wide target demand, calendar features,
+    lags, demand-weighted system-wide weather.
 
     weights_as_of: passed to _zone_weights — for a leak-free backtest, pass
     a cutoff strictly before the earliest test fold begins (see
@@ -121,54 +175,37 @@ def build_training_table(
     weights = _zone_weights(con, as_of=weights_as_of)
     weather = _weighted_weather(con, weights)
 
-    df = demand.merge(weather, on="period", how="left")
-    df = df.sort_values("period").reset_index(drop=True)
+    return _assemble_features(demand, weather)
 
-    # --- Degree days (from the demand-weighted temp) ---
-    df["hdd"] = (DEGREE_DAY_BASE_C - df["temp_mean"]).clip(lower=0)
-    df["cdd"] = (df["temp_mean"] - DEGREE_DAY_BASE_C).clip(lower=0)
 
-    # --- Calendar features ---
-    df["hour"] = df["period"].dt.hour
-    df["dow"] = df["period"].dt.dayofweek  # 0=Mon
-    df["month"] = df["period"].dt.month
-    df["is_weekend"] = (df["dow"] >= 5).astype(int)
-    df["is_holiday"] = df["period"].dt.date.astype("datetime64[ns]").isin(
-        pd.to_datetime(list(US_HOLIDAYS.keys()))
-    ).astype(int)
+def build_zone_training_table(con: duckdb.DuckDBPyConnection, zone: str) -> pd.DataFrame:
+    """One row per hour: THIS ZONE's demand, calendar features, lags, and
+    THIS ZONE's OWN weather (not the system-wide demand-weighted average —
+    Philadelphia's demand responds to Philadelphia's temperature, not PJM's
+    blended one). Week 4: zone-level forecasting for the flexibility engine.
 
-    # --- Lag features ---
-    # INVARIANT: every lag length here must be >= the backtest's
-    # test_size_hours (default 24h, see gridflex/models/backtest.py), or it
-    # silently leaks within-horizon actuals that a real day-ahead forecast
-    # would never have. lag_1h/lag_2h were tried and REMOVED after producing
-    # an implausibly good backtest result — PJM's real forecast horizon is
-    # ~24h, never 1-2h, so short lags aren't just risky here, they're
-    # fundamentally inconsistent with the product being benchmarked against.
-    df["lag_24h"] = df["demand"].shift(24)    # same hour, yesterday
-    df["lag_48h"] = df["demand"].shift(48)    # same hour, 2 days ago
-    df["lag_168h"] = df["demand"].shift(168)  # same hour, same day, last week
+    Uses the exact same _assemble_features as the system-level table, so
+    FEATURE_COLUMNS and every model/backtest function work unchanged on
+    either — only the demand and weather SOURCE differs.
+    """
+    demand = con.execute("""
+        SELECT period, value AS demand
+        FROM subba_demand
+        WHERE subba = ?
+        ORDER BY period
+    """, [zone]).fetchdf()
 
-    n_before = len(df)
-    # Check ALL lag columns, not just lag_168h. A null demand value at row X
-    # creates NaN in THREE different downstream rows (X+24's lag_24h, X+48's
-    # lag_48h, X+168's lag_168h) — not the same row three times. Checking
-    # only lag_168h (the old assumption: "it's always the longest lag, so
-    # it's the binding constraint") is true for the series' initial 168-row
-    # startup window, but NOT true for a null occurring mid-series — found
-    # via a real discrepancy (400 dropped rows instead of the expected 168)
-    # traced to 116 null EIA rows, mostly clustered around DST transitions.
-    lag_cols = [c for c in df.columns if c.startswith("lag_") and c.endswith("h")]
-    df = df.dropna(subset=[*lag_cols, "demand"]).reset_index(drop=True)
-    n_dropped = n_before - len(df)
-    if n_dropped:
-        import logging
-        logging.getLogger(__name__).info(
-            "build_training_table: dropped %d row(s) lacking full lag history "
-            "(expected — needs 168h of prior data)", n_dropped
-        )
+    weather = con.execute("""
+        SELECT period, temperature_2m AS temp_mean,
+               relative_humidity_2m AS humidity_mean,
+               wind_speed_10m AS wind_mean,
+               shortwave_radiation AS solar_mean
+        FROM weather
+        WHERE subba = ?
+        ORDER BY period
+    """, [zone]).fetchdf()
 
-    return df
+    return _assemble_features(demand, weather)
 
 
 FEATURE_COLUMNS = [

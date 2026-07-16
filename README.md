@@ -169,6 +169,45 @@ all.** This project's zone-level demand forecasting (Week 4) fills a real
 gap in what's publicly available, not just a comparison against an
 incumbent.
 
+## Results (Week 4 — zone-level aggregate)
+
+20 independent zone-level models (one per PJM sub-region, each using its
+own local weather, not the system-wide blend), summed into a system-level
+aggregate and scored against true system actuals — the same ground truth
+PJM's own `DF` is scored against — via the identical calendar-aligned
+walk-forward harness used in Week 3, extended to guarantee cross-zone fold
+alignment (verified: a gap in one zone's data can never silently shift
+which real hours another zone's "same fold" refers to).
+
+| Fold | Ours MAPE | PJM MAPE | Ours vs PJM |
+|---|---|---|---|
+| 0 | 2.58% | 2.78% | **beat by 7%** |
+| 1 | 2.39% | 3.27% | **beat by 27%** |
+| 2 | 3.24% | 3.65% | **beat by 11%** |
+| 3 | 2.97% | 4.22% | **beat by 30%** |
+| 4 | 7.38% | 4.24% | lost by 74% |
+| **Average** | **3.71%** | **3.63%** | roughly tied |
+
+The average alone flattens the interesting part. **The zone-level
+aggregate beat PJM's own system-wide forecast in 4 of 5 folds** — sometimes
+by ~30% — then fell behind sharply in one volatile fold. Investigated
+rather than averaged away: the elevated error in fold 4 is spread evenly
+across nearly all 20 zones (3.7%-10.1% MAPE, no single zone dominating),
+which is the signature of a genuine system-wide demand surprise, not a
+data-quality issue in any one zone's model. That fold coincides with a
+volatile mid-July demand period where PJM's forecast-time information
+advantage (confirmed outage schedules, intraday operational updates,
+updated weather nowcasts) plausibly matters most — consistent with the
+weather-hindsight limitation already noted above.
+
+**Reading:** a from-scratch, zone-level system built on public data alone
+is competitive with — and often beats — a mature RTO's system-wide
+production forecast under typical conditions, and specifically falls
+behind during atypical ones, for reasons that are identifiable rather than
+mysterious. That's a stronger, more honest result than a flat average, and
+it's the kind of finding that only shows up by looking at the folds
+individually instead of trusting the summary statistic.
+
 ## Roadmap
 
 - **Week 2:** live public dashboard (PJM zone map, carbon intensity, GitHub Pages) ✅
