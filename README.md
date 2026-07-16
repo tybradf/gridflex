@@ -119,9 +119,58 @@ bugs, and each has a clear path to fixing later:
   automatically by a pandera schema check before they ever reach the
   database (`gridflex/ingest/validate.py`), rather than requiring manual
   discovery.
+- **~0.18% of historical demand data contained null values**, weakly
+  correlated with DST transitions (4 of 6 clusters land exactly on real US
+  DST dates, 2 don't - cause not fully confirmed, likely an intermittent
+  EIA/PJM telemetry issue). These predated the pandera validation above and
+  were cleaned retroactively (`scripts/clean_outliers.py`, which reuses the
+  same validation logic rather than a separate implementation); all data
+  ingested going forward is protected automatically.
+- **The demand and fuel-mix data streams publish on independent, sometimes
+  conflicting cadences** - which one is "behind" the other flips day to day
+  (observed fuel-mix running ~23h ahead of demand on one occasion, and
+  demand running ahead of fuel-mix on another). The live dashboard currently
+  anchors both to whichever stream is older, to avoid a false gap where one
+  series' data exists but the export window excludes it (see
+  `gridflex/features/export.py`'s `_shared_anchor`). This keeps the two
+  panels aligned but means the whole dashboard is only as fresh as its
+  slowest input. A cleaner fix - each panel showing its own independent
+  "as of" freshness rather than a forced shared anchor - is deferred to a
+  future design pass.
+- **The backtest evaluates against actual historical weather, not a
+  forecast.** A real day-ahead deployment only has weather *forecasts*,
+  with their own error - PJM's real `DF` had to contend with that; our
+  backtest used hindsight-perfect weather. This is standard practice for
+  evaluating model architecture, but it's a real advantage our backtest had
+  that a live system wouldn't. Live inference (`gridflex/models/live.py`)
+  correctly uses forecast weather, not archive weather, closing this gap
+  for actual production use even though the backtest doesn't reflect it.
+
+## Results (Week 3)
+
+System-level demand forecasting, benchmarked against PJM's own published
+day-ahead forecast (`DF`) via 5-fold walk-forward backtesting (no data
+leakage - verified via a full audit, see commit history):
+
+| Model | MAE (MW) | MAPE |
+|---|---|---|
+| Seasonal naive (demand 168h ago) | ~12,368 | 10.52% |
+| LightGBM (calendar + weather + lags) | ~4,777 | 3.98% |
+| **PJM's own day-ahead forecast** | ~4,093 | **3.67%** |
+
+Our model narrowly trails PJM's own production forecasting system - a
+mature RTO's system built over years, using data (confirmed outage
+schedules, intraday weather nowcasts) we don't have access to. Getting
+within ~8% relative of that on public data alone, built in days, is a
+credible result on its own.
+
+The differentiator: **PJM publishes no equivalent zone-level forecast at
+all.** This project's zone-level demand forecasting (Week 4) fills a real
+gap in what's publicly available, not just a comparison against an
+incumbent.
 
 ## Roadmap
 
-- **Week 2:** live public dashboard (PJM zone map, carbon intensity, GitHub Pages)
-- **Week 3:** forecasting models, benchmarked live against PJM's own published forecast
+- **Week 2:** live public dashboard (PJM zone map, carbon intensity, GitHub Pages) ✅
+- **Week 3:** forecasting models, benchmarked live against PJM's own published forecast ✅
 - **Week 4:** marginal-emissions estimation + the flexible-demand value engine
