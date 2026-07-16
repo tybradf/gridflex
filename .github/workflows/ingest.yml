@@ -48,6 +48,13 @@ jobs:
         env:
           EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
 
+      - name: Generate live forecast
+        # continue-on-error: a transient Open-Meteo hiccup shouldn't block
+        # the core demand pipeline from deploying — but this step still
+        # shows as failed (⚠️) in the Actions UI, so it's never silent.
+        continue-on-error: true
+        run: python -m gridflex.cli forecast
+
       - name: Regenerate site data
         run: python -m gridflex.features.export
 

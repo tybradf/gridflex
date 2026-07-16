@@ -16,6 +16,7 @@ import typer
 
 from gridflex.ingest.eia import EIAClient
 from gridflex.ingest.land import write_raw
+from gridflex.ingest.validate import validate_and_filter
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
 log = logging.getLogger(__name__)
@@ -86,12 +87,37 @@ def ingest(
             if df.empty:
                 log.warning("  %s: 0 rows returned — skipping", dataset)
                 continue
+            df = validate_and_filter(df, dataset)
+            if df.empty:
+                log.warning("  %s: 0 rows survived validation — skipping", dataset)
+                continue
             raw_paths = write_raw(df, dataset)
             n = upsert(con, dataset, df)
             log.info("  %s: %d rows -> DuckDB, raw Parquet -> %s", dataset, n, raw_paths)
 
     con.close()
     log.info("Done.")
+
+
+@app.command()
+def forecast(
+    horizon_hours: int = typer.Option(24, help="Hours ahead to forecast."),
+) -> None:
+    """Generate a live demand forecast using live forecast weather (not
+    archive/historical), and store it for scoring once actuals catch up.
+    Intended to run daily, after ingest, before export.
+    """
+    from gridflex.models.live import generate_forecast, store_forecast
+    from gridflex.store.db import get_connection
+
+    con = get_connection()
+    fc = generate_forecast(con, horizon_hours=horizon_hours)
+    n = store_forecast(con, fc)
+    log.info(
+        "Stored %d forecast row(s), %s .. %s",
+        n, fc["period"].min(), fc["period"].max(),
+    )
+    con.close()
 
 
 def _normalize(date_str: str) -> str:

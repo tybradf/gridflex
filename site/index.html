@@ -86,6 +86,10 @@
       <span class="label">System demand</span>
       <span class="value demand" id="readout-demand">—</span>
     </div>
+    <div class="readout" id="scoreboard-readout" style="display:none">
+      <span class="label" id="scoreboard-label">Live forecast MAPE (7d)</span>
+      <span class="value" id="readout-scoreboard">—</span>
+    </div>
     <div class="spacer"></div>
     <div class="status" id="status"><span class="dot"></span>loading…</div>
   </header>
@@ -113,6 +117,25 @@
   const zones = payload.zones;                 // [{code, name, lat, lon}]
   const demandRows = payload.zone_demand;       // [{period, subba, demand_mw}]
   const carbonRows = payload.carbon_intensity;  // [{period, carbon_intensity, total_generation}]
+
+  // ---- Scoreboard: our live forecast vs PJM's, reusing the exact same
+  // compute_metrics() used throughout Week 3's backtest — see
+  // gridflex/models/live.py. Hidden entirely until n_scored > 0 (i.e. until
+  // enough real time has passed for actuals to catch up to a forecast).
+  function renderScoreboard(scoreboard) {
+    const el = document.getElementById('scoreboard-readout');
+    if (!scoreboard || scoreboard.n_scored === 0) { el.style.display = 'none'; return; }
+    el.style.display = '';
+    const ours = scoreboard.ours.mape, pjm = scoreboard.pjm.mape;
+    const weAreAhead = ours < pjm;
+    const valueEl = document.getElementById('readout-scoreboard');
+    valueEl.style.color = weAreAhead ? TEAL : AMBER;
+    valueEl.innerHTML =
+      `${ours.toFixed(2)}%<span class="unit"> vs PJM ${pjm.toFixed(2)}%</span>`;
+    document.getElementById('scoreboard-label').textContent =
+      `Live forecast MAPE, last ${scoreboard.n_scored}h`;
+  }
+  renderScoreboard(payload.scoreboard);
 
   // ---- Index demand by period -> {zoneCode: mw} ----
   const demandByPeriod = new Map();

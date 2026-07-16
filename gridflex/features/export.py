@@ -86,6 +86,39 @@ def export_zone_metadata() -> list[dict]:
     ]
 
 
+def export_forecast_upcoming(con) -> list[dict]:
+    """Forecast hours that haven't happened yet — i.e. not yet scoreable.
+    Straight from the forecasts table, no join needed."""
+    df = con.execute("""
+        SELECT f.period, f.predicted_demand
+        FROM forecasts f
+        LEFT JOIN pjm_demand d ON f.period = d.period
+        WHERE d.value IS NULL
+        ORDER BY f.period
+    """).fetchdf()
+    return _df_to_records(df)
+
+
+def export_scoreboard(con, days: int = 7) -> dict:
+    """Block 3.6 — reuses live_scoreboard() (which itself reuses
+    compute_metrics() from the backtest harness) so the exported number is
+    provably the same yardstick used throughout Week 3, not a separate
+    export-time calculation that could quietly drift from it."""
+    from gridflex.models.live import live_scoreboard
+
+    score = live_scoreboard(con, days=days)
+    if score["n_scored"] == 0:
+        return score
+
+    rows = []
+    for r in score["rows"]:
+        row = dict(r)
+        row["period"] = row["period"].strftime("%Y-%m-%dT%H:%M:%SZ")
+        rows.append(row)
+    score["rows"] = rows
+    return score
+
+
 def run(hours: int = 48) -> None:
     SITE_DATA_DIR.mkdir(parents=True, exist_ok=True)
     con = get_connection()
@@ -96,6 +129,8 @@ def run(hours: int = 48) -> None:
         "zone_demand": export_zone_demand(con, hours=hours, anchor=anchor),
         "carbon_intensity": export_carbon(con, hours=hours, anchor=anchor),
         "zones": export_zone_metadata(),
+        "forecast_upcoming": export_forecast_upcoming(con),
+        "scoreboard": export_scoreboard(con, days=7),
         "generated_at": pd.Timestamp.now(tz="UTC").strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
     con.close()
@@ -104,7 +139,9 @@ def run(hours: int = 48) -> None:
     out_path.write_text(json.dumps(payload, indent=2))
     print(f"Wrote {out_path} "
           f"({len(payload['zone_demand'])} demand rows, "
-          f"{len(payload['carbon_intensity'])} carbon rows)")
+          f"{len(payload['carbon_intensity'])} carbon rows, "
+          f"{len(payload['forecast_upcoming'])} upcoming forecast rows, "
+          f"scoreboard n_scored={payload['scoreboard']['n_scored']})")
 
 
 if __name__ == "__main__":

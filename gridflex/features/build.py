@@ -150,9 +150,16 @@ def build_training_table(
     df["lag_168h"] = df["demand"].shift(168)  # same hour, same day, last week
 
     n_before = len(df)
-    # lag_168h remains the binding constraint — rows with a full week of
-    # history automatically have lag_1h/lag_2h/lag_24h/lag_48h populated too.
-    df = df.dropna(subset=["lag_168h", "demand"]).reset_index(drop=True)
+    # Check ALL lag columns, not just lag_168h. A null demand value at row X
+    # creates NaN in THREE different downstream rows (X+24's lag_24h, X+48's
+    # lag_48h, X+168's lag_168h) — not the same row three times. Checking
+    # only lag_168h (the old assumption: "it's always the longest lag, so
+    # it's the binding constraint") is true for the series' initial 168-row
+    # startup window, but NOT true for a null occurring mid-series — found
+    # via a real discrepancy (400 dropped rows instead of the expected 168)
+    # traced to 116 null EIA rows, mostly clustered around DST transitions.
+    lag_cols = [c for c in df.columns if c.startswith("lag_") and c.endswith("h")]
+    df = df.dropna(subset=[*lag_cols, "demand"]).reset_index(drop=True)
     n_dropped = n_before - len(df)
     if n_dropped:
         import logging
