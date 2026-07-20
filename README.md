@@ -119,6 +119,19 @@ bugs, and each has a clear path to fixing later:
   automatically by a pandera schema check before they ever reach the
   database (`gridflex/ingest/validate.py`), rather than requiring manual
   discovery.
+- **A separate, subtler class of bad data: single-hour spikes that land
+  INSIDE the plausible range.** Found while preparing Week 4's marginal-
+  emissions regression: a value like 215,682 MW is inside pjm_demand's
+  [0, 250,000] plausible range in isolation, but is obviously wrong given
+  neighbors of ~70,000-75,000 MW on either side - a spike-then-instant-
+  revert pattern no absolute-range check can catch. A contextual detector
+  (`detect_spike_rows`) checks a row against its immediate neighbors
+  instead. Found 22 such rows across pjm_demand, subba_demand, and
+  fuel_mix (cleaned via `scripts/clean_outliers.py`); ~75% cluster around
+  00:00 Eastern, suggesting a batch-processing artifact, not investigated
+  further. This check is retroactive only - not yet wired into ongoing
+  ingest, since it needs neighboring context a small incremental batch may
+  not have. A documented gap, not a solved one.
 - **~0.18% of historical demand data contained null values**, weakly
   correlated with DST transitions (4 of 6 clusters land exactly on real US
   DST dates, 2 don't - cause not fully confirmed, likely an intermittent
@@ -208,8 +221,63 @@ mysterious. That's a stronger, more honest result than a flat average, and
 it's the kind of finding that only shows up by looking at the folds
 individually instead of trusting the summary statistic.
 
+## Results (Week 4 — marginal emissions)
+
+`carbon/average.py` gives *average* carbon intensity — the blended fuel
+mix's rate. A flexibility decision needs *marginal*: if 1 MW shifts into
+or out of an hour, which plant responds, and what's its emissions rate?
+Estimated via OLS regression of Δ(system emissions) on Δ(system demand)
+across genuinely-adjacent hour pairs (a naive `.diff()` across a real data
+gap would silently corrupt this — filtered out explicitly, see
+`compute_deltas`).
+
+**A single global regression (n=65,919) recovered 419.8 kg/MWh — within
+2.4% of natural gas's known emission factor (410 kg/MWh)**, a strong
+independent physical sanity check, but with R²=0.49: the marginal
+responder genuinely varies by regime, which one system-wide slope
+necessarily averages over.
+
+**Segmented by season × hour-of-day (96 buckets), gated three ways** — a
+result must clear enough sample size (`min_n`), enough explanatory power
+(`min_r2`, catches fits like winter/6am's 1,987 kg/MWh — exceeding coal's
+own emission factor, the highest in the model, from an R²=0.08 fit), and a
+physical plausibility ceiling (`max_abs_rate`, catches numerically
+degenerate fits — like the ~10¹⁶ kg/MWh a near-singular regression on pure
+noise produced in testing — that spuriously cleared the R² gate by
+chance). 75 of 96 segments survive; the failures cluster coherently in
+early-morning hours (roughly midnight-9am) across all four seasons —
+overnight demand sits in a low, flat trough where baseload dominates and
+the statistical signal of *which* plant is on the margin is genuinely
+weaker, not coincidentally also when flexibility is least valuable anyway.
+
+**The headline claim, tested rather than eyeballed:** point estimates
+alone can't distinguish real regime differences from noise, so every
+comparison below was checked against 95% confidence intervals, not just
+point estimates.
+
+| Season | High hour | Low hour | Ratio | CIs overlap? |
+|---|---|---|---|---|
+| Fall | 10am (669 kg/MWh) | 11pm (232 kg/MWh) | 2.88x | No — real |
+| Spring | 10am (580) | 12pm (283) | 2.05x | No — real |
+| Summer | 10am (696) | 1am (288) | 2.41x | No — real |
+| Winter | 3am (601) | 12pm (305) | 1.97x | No — real |
+
+Every season shows a genuine, statistically non-overlapping ~2-3x swing
+in marginal emissions rate by hour — and this isn't a cherry-picked pair:
+53% of all 2,701 possible segment-pairs across the 74 survivors have
+non-overlapping confidence intervals, meaning more than half of any
+comparison drawn from this table is real signal, not noise. "Hour 10"
+is the peak in three of four seasons (plausibly the morning ramp onto gas,
+before solar is fully online); winter's peak at 3am rather than midday is
+a genuinely counterintuitive result worth further investigation, not
+papered over.
+
+**This is what makes a claim like "flexibility is worth ~2-3x more at
+certain hours than others" defensible** — the actual foundation for the
+flexible-demand value engine (Week 4.3).
+
 ## Roadmap
 
 - **Week 2:** live public dashboard (PJM zone map, carbon intensity, GitHub Pages) ✅
 - **Week 3:** forecasting models, benchmarked live against PJM's own published forecast ✅
-- **Week 4:** marginal-emissions estimation + the flexible-demand value engine
+- **Week 4:** marginal-emissions estimation ✅ + the flexible-demand value engine (in progress)

@@ -85,3 +85,39 @@ def test_composite_key_delete_targets_only_the_bad_zone(tmp_db):
     assert len(remaining) == 1
     assert remaining.iloc[0]["subba"] == "CE"
     assert not remaining["value"].isna().any()
+
+
+def test_spike_pass_catches_contextual_outlier_missed_by_range_check(tmp_db):
+    """Week 4: a spike that lands INSIDE PLAUSIBLE_RANGES (invisible to
+    pass 1) must still be caught by pass 2, and composite-key deletion must
+    correctly target only the spiking zone."""
+    from gridflex.store.db import get_connection
+    from scripts.clean_outliers import run as clean_run
+
+    con = get_connection()
+    periods = pd.date_range("2024-01-01", periods=8, freq="h", tz="UTC")
+    values = [79156, 77330, 73999, 215682, 68741, 67380, 67152, 67222]
+    upsert(con, "pjm_demand", pd.DataFrame({
+        "period": periods, "respondent": ["PJM"] * 8, "type": ["D"] * 8, "value": values,
+    }))
+    pe_values = [1000, 1000, 1000, 20000, 1000, 1000, 1000, 1000]
+    ce_values = [2000] * 8
+    upsert(con, "subba_demand", pd.DataFrame({
+        "period": list(periods) * 2, "subba": ["PE"] * 8 + ["CE"] * 8,
+        "parent": ["PJM"] * 16, "value": pe_values + ce_values,
+    }))
+    con.close()
+
+    clean_run(delete=True)
+
+    con = get_connection()
+    pjm_count = con.execute("SELECT COUNT(*) FROM pjm_demand").fetchone()[0]
+    remaining_zone = con.execute(
+        "SELECT subba, value FROM subba_demand WHERE period = '2024-01-01 03:00:00+00'"
+    ).fetchdf()
+    con.close()
+
+    assert pjm_count == 7  # 8 - 1 spike
+    assert len(remaining_zone) == 1
+    assert remaining_zone.iloc[0]["subba"] == "CE"
+    assert remaining_zone.iloc[0]["value"] == 2000.0
