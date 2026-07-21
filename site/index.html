@@ -126,7 +126,7 @@
   }
   #about-trigger:hover, #about-trigger.pinned { border-color: var(--teal); color: var(--teal); }
   #about-panel {
-    display: none; position: absolute; top: 28px; left: 0; width: 340px; z-index: 100;
+    display: none; position: absolute; top: 28px; left: 0; width: 340px; z-index: 5000;
     background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
     padding: 16px 18px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);
     font-size: 13px; line-height: 1.6; color: var(--text);
@@ -138,6 +138,32 @@
   }
   #about-panel a { color: var(--teal); text-decoration: none; }
   #about-panel a:hover { text-decoration: underline; }
+
+  /* ---- Landscape chart — floats over the map's empty ocean space ---- */
+  #map { position: relative; }
+  #landscape-panel {
+    position: absolute; top: 16px; right: 16px; width: 320px; z-index: 450;
+    background: rgba(18, 23, 28, 0.94); border: 1px solid var(--line); border-radius: 6px;
+    padding: 12px 14px 10px; backdrop-filter: blur(2px);
+  }
+  #landscape-panel .caption {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 8px;
+  }
+  #landscape-season-label { color: var(--teal); font-weight: 700; }
+  #landscape-svg { width: 100%; height: 90px; display: block; }
+  #landscape-svg .bar { cursor: pointer; }
+  #landscape-svg .bar.amber { fill: var(--amber); }
+  #landscape-svg .bar.teal { fill: var(--teal); }
+  #landscape-svg .bar.ungated { fill: var(--line); }
+  #landscape-svg .bar.selected { stroke: #fff; stroke-width: 1.5; }
+  #landscape-svg .bar:hover { opacity: 0.8; }
+  #landscape-svg .hour-tick { fill: var(--muted); font-family: var(--mono); font-size: 8px; }
+  #landscape-hint {
+    font-size: 10px; color: var(--muted); margin-top: 6px; line-height: 1.4;
+  }
+  @media (max-width: 900px) { #landscape-panel { display: none; } } /* map too narrow to host it legibly */
 
   .leaflet-popup-content-wrapper { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 4px; }
   .leaflet-popup-content { font-family: var(--mono); font-size: 12px; margin: 8px 12px; }
@@ -186,7 +212,16 @@
     <div class="status" id="status"><span class="dot"></span>loading…</div>
   </header>
 
-  <div id="map"></div>
+  <div id="map">
+    <div id="landscape-panel">
+      <div class="caption">
+        <span>marginal emissions by hour — <span id="landscape-season-label">—</span></span>
+        <span id="landscape-unit">kg/MWh</span>
+      </div>
+      <svg id="landscape-svg" viewBox="0 0 320 90" preserveAspectRatio="none"></svg>
+      <div id="landscape-hint">click an hour to set it as your origin below</div>
+    </div>
+  </div>
 
   <div id="scrubber-panel">
     <div class="caption">
@@ -424,6 +459,17 @@
   // ---- Flexibility value calculator ----
   const flexData = payload.flexibility || { segments: [], zone_typical_demand: [] };
 
+  function seasonFromDate(date) {
+    const month = date.getUTCMonth() + 1;
+    if ([12, 1, 2].includes(month)) return 'winter';
+    if ([3, 4, 5].includes(month)) return 'spring';
+    if ([6, 7, 8].includes(month)) return 'summer';
+    return 'fall';
+  }
+  const now = new Date();
+  const currentSeason = seasonFromDate(now);
+  const currentHour = now.getUTCHours();
+
   const zoneSelect = document.getElementById('flex-zone');
   zones.forEach(z => {
     const opt = document.createElement('option');
@@ -435,9 +481,10 @@
   for (let h = 0; h < 24; h++) {
     const opt = document.createElement('option');
     opt.value = h; opt.textContent = String(h).padStart(2, '0') + ':00';
-    if (h === 9) opt.selected = true;
+    if (h === currentHour) opt.selected = true;
     hourSelect.appendChild(opt);
   }
+  document.getElementById('flex-season').value = currentSeason;
 
   function fmtKg(kg) {
     const absKg = Math.abs(kg);
@@ -507,6 +554,83 @@
     const result = fullValueOfShift(flexData.segments, flexData.zone_typical_demand, zone, mw, originHour, windowHours, season);
     renderFlexResult(result);
   });
+
+  // ---- Landscape chart: the "big picture" view, synced with the calculator ----
+  function buildLandscapeData(segments, season) {
+    const byHour = {};
+    segments.filter(s => s.season === season).forEach(s => { byHour[s.hour] = s; });
+    const hours = [];
+    for (let h = 0; h < 24; h++) {
+      hours.push(byHour[h]
+        ? { hour: h, gated: true, rate: byHour[h].marginal_rate_kg_per_mwh }
+        : { hour: h, gated: false });
+    }
+    return hours;
+  }
+
+  function renderLandscapeChart(season, selectedHour) {
+    document.getElementById('landscape-season-label').textContent =
+      season.toUpperCase() + (season === currentSeason ? ' (current)' : '');
+
+    const data = buildLandscapeData(flexData.segments, season);
+    const gatedRates = data.filter(d => d.gated).map(d => d.rate);
+    const svg = document.getElementById('landscape-svg');
+
+    if (gatedRates.length === 0) {
+      svg.innerHTML = '<text x="160" y="45" text-anchor="middle" fill="#7C8A93" font-size="10" font-family="monospace">no validated data for this season yet</text>';
+      return;
+    }
+
+    const minRate = Math.min(...gatedRates), maxRate = Math.max(...gatedRates);
+    const W = 320, barW = W / 24, chartH = 62, baseY = 72;
+    function barHeight(rate) {
+      return maxRate === minRate ? chartH * 0.5 : 6 + (chartH - 6) * (rate - minRate) / (maxRate - minRate);
+    }
+    function colorClass(rate) {
+      if (maxRate === minRate) return 'teal';
+      return (rate - minRate) / (maxRate - minRate) > 0.55 ? 'amber' : 'teal';
+    }
+
+    let svgContent = '';
+    data.forEach(d => {
+      const x = d.hour * barW;
+      if (d.gated) {
+        const h = barHeight(d.rate);
+        const cls = 'bar ' + colorClass(d.rate) + (d.hour === selectedHour ? ' selected' : '');
+        svgContent += `<rect class="${cls}" data-hour="${d.hour}" data-gated="1" x="${x + 1}" y="${baseY - h}" width="${barW - 2}" height="${h}" rx="1"><title>${String(d.hour).padStart(2, '0')}:00 \u2014 ${d.rate.toFixed(0)} kg/MWh</title></rect>`;
+      } else {
+        const cls = 'bar ungated' + (d.hour === selectedHour ? ' selected' : '');
+        svgContent += `<rect class="${cls}" data-hour="${d.hour}" data-gated="0" x="${x + 1}" y="${baseY - 4}" width="${barW - 2}" height="4" rx="1"><title>${String(d.hour).padStart(2, '0')}:00 \u2014 insufficient data, not statistically validated</title></rect>`;
+      }
+      if (d.hour % 6 === 0) {
+        svgContent += `<text class="hour-tick" x="${x + 2}" y="${baseY + 10}">${String(d.hour).padStart(2, '0')}</text>`;
+      }
+    });
+    svg.innerHTML = svgContent;
+
+    svg.querySelectorAll('.bar').forEach(bar => {
+      bar.addEventListener('click', () => {
+        if (bar.dataset.gated === '0') return; // ungated hours aren't a valid origin choice
+        const h = parseInt(bar.dataset.hour, 10);
+        hourSelect.value = h;
+        renderLandscapeChart(document.getElementById('flex-season').value, h);
+        document.getElementById('flex-calculate').click();
+      });
+    });
+  }
+
+  document.getElementById('flex-season').addEventListener('change', (e) => {
+    renderLandscapeChart(e.target.value, parseInt(hourSelect.value, 10));
+  });
+  hourSelect.addEventListener('change', (e) => {
+    renderLandscapeChart(document.getElementById('flex-season').value, parseInt(e.target.value, 10));
+  });
+
+  // ---- Initial state: real current season/hour, chart rendered, and an
+  // immediate calculation so the page shows something true on load rather
+  // than an empty form — "orient quickly" applies here too. ----
+  renderLandscapeChart(currentSeason, currentHour);
+  document.getElementById('flex-calculate').click();
 
   // ---- Initial render ----
   setSelected(periods.length - 1);
