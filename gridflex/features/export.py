@@ -119,6 +119,50 @@ def export_scoreboard(con, days: int = 7) -> dict:
     return score
 
 
+def export_flexibility_data(con) -> dict:
+    """Data needed for the CLIENT-SIDE flexibility engine (block 4.3's UI).
+    The site is static (no server — see README architecture), so the
+    shift-finding logic runs in JavaScript against precomputed tables, not
+    by calling Python live. Two tables, kept small:
+
+    - segments: marginal emissions rate + 95% CI per (season, hour),
+      already three-gate-filtered by estimate_marginal_emissions_by_segment
+      — the JS engine trusts these are pre-validated, doesn't re-derive them.
+    - zone_typical_demand: AVG(demand) per (zone, season, hour) — one
+      efficient SQL query for all 20 zones x 4 seasons x 24 hours (1,920
+      rows) rather than 1,920 separate Python calls to zone_typical_demand().
+      zone_seasonal_peak is NOT separately exported — the JS engine derives
+      it as max(typical_demand) across the 24 hours, mirroring exactly how
+      Python's zone_seasonal_peak() does it, one source of truth either way.
+    """
+    from gridflex.models.marginal_emissions import compute_deltas, estimate_marginal_emissions_by_segment
+
+    deltas = compute_deltas(con)
+    segments = estimate_marginal_emissions_by_segment(deltas)
+    segments_out = _df_to_records(segments) if not segments.empty else []
+
+    zone_demand = con.execute("""
+        SELECT
+            subba AS zone,
+            CASE
+                WHEN EXTRACT(month FROM period) IN (12, 1, 2) THEN 'winter'
+                WHEN EXTRACT(month FROM period) IN (3, 4, 5) THEN 'spring'
+                WHEN EXTRACT(month FROM period) IN (6, 7, 8) THEN 'summer'
+                ELSE 'fall'
+            END AS season,
+            EXTRACT(hour FROM period)::INT AS hour,
+            AVG(value) AS typical_demand_mw
+        FROM subba_demand
+        GROUP BY zone, season, hour
+        ORDER BY zone, season, hour
+    """).fetchdf()
+
+    return {
+        "segments": segments_out,
+        "zone_typical_demand": zone_demand.to_dict(orient="records"),
+    }
+
+
 def run(hours: int = 48) -> None:
     SITE_DATA_DIR.mkdir(parents=True, exist_ok=True)
     con = get_connection()
@@ -131,6 +175,7 @@ def run(hours: int = 48) -> None:
         "zones": export_zone_metadata(),
         "forecast_upcoming": export_forecast_upcoming(con),
         "scoreboard": export_scoreboard(con, days=7),
+        "flexibility": export_flexibility_data(con),
         "generated_at": pd.Timestamp.now(tz="UTC").strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
     con.close()
@@ -141,7 +186,8 @@ def run(hours: int = 48) -> None:
           f"({len(payload['zone_demand'])} demand rows, "
           f"{len(payload['carbon_intensity'])} carbon rows, "
           f"{len(payload['forecast_upcoming'])} upcoming forecast rows, "
-          f"scoreboard n_scored={payload['scoreboard']['n_scored']})")
+          f"scoreboard n_scored={payload['scoreboard']['n_scored']}, "
+          f"flexibility segments={len(payload['flexibility']['segments'])})")
 
 
 if __name__ == "__main__":

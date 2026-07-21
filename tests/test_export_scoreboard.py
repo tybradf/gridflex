@@ -44,3 +44,34 @@ def test_scoreboard_and_upcoming_forecast_split_correctly(tmp_db):
     # succeeding above, but double check no raw Timestamp objects leaked through)
     assert all(isinstance(r["period"], str) for r in payload["scoreboard"]["rows"])
     assert all(isinstance(r["period"], str) for r in payload["forecast_upcoming"])
+
+
+def test_export_flexibility_data_shapes_correctly(tmp_db):
+    from gridflex.store.db import get_connection
+    con = get_connection()
+
+    n = 24 * 730  # 2 years -- enough per-bucket coverage to clear min_n
+    periods = pd.date_range("2023-01-01", periods=n, freq="h", tz="UTC")
+    import numpy as np
+    np.random.seed(0)
+    demand = 100_000 + 20_000 * np.sin(np.arange(n) / 24 * 2 * np.pi) + np.random.normal(0, 500, n)
+    ng = demand - 50_000
+
+    upsert(con, "pjm_demand", pd.DataFrame({
+        "period": periods, "respondent": ["PJM"] * n, "type": ["D"] * n, "value": demand,
+    }))
+    upsert(con, "fuel_mix", pd.DataFrame(
+        [{"period": p, "respondent": "PJM", "fueltype": "NG", "value": ng[i]} for i, p in enumerate(periods)]
+    ))
+    upsert(con, "subba_demand", pd.DataFrame({
+        "period": list(periods) * 2, "subba": ["PE"] * n + ["CE"] * n,
+        "parent": ["PJM"] * n * 2, "value": [1000.0] * n + [2000.0] * n,
+    }))
+
+    result = export.export_flexibility_data(con)
+    con.close()
+
+    assert len(result["segments"]) > 0
+    assert len(result["zone_typical_demand"]) == 2 * 4 * 24  # 2 zones x 4 seasons x 24 hours
+    # must be genuinely JSON-serializable, not just Python-dict-shaped
+    json.dumps(result)
