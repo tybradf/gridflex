@@ -57,11 +57,21 @@ def compute_deltas(con: duckdb.DuckDBPyConnection) -> pd.DataFrame:
     """Hour-to-hour (Δemissions, Δdemand) pairs, restricted to genuinely
     adjacent hours only (period gap == exactly 1 hour). Rows spanning a
     real data gap are dropped, not silently included with a spurious delta.
+
+    ALSO drops rows with a null demand or emissions VALUE before computing
+    deltas — a real bug found in production: a row can be calendar-adjacent
+    (gap_hours == 1) and still have a null value (e.g. residual bad data in
+    an older DB snapshot that predates validate_and_filter/clean_outliers).
+    The gap-hours check alone doesn't catch this — it only detects MISSING
+    rows, not present-but-null ones. This is the same null-vs-missing-row
+    distinction already fixed once in build_training_table's lag logic;
+    this function needed the same defense and didn't have it.
     """
     demand = con.execute("SELECT period, value AS demand FROM pjm_demand ORDER BY period").fetchdf()
     emissions = hourly_total_emissions(con)
 
     df = demand.merge(emissions, on="period", how="inner").sort_values("period").reset_index(drop=True)
+    df = df.dropna(subset=["demand", "total_emissions_kg"]).reset_index(drop=True)
 
     gap_hours = df["period"].diff().dt.total_seconds() / 3600
     df["delta_demand"] = df["demand"].diff()

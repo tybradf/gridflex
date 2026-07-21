@@ -238,3 +238,41 @@ def test_segments_below_min_n_are_skipped_not_crashed(tmp_db):
     con.close()
 
     assert result.empty  # every segment skipped, but no crash
+
+
+def test_null_valued_present_row_does_not_crash_regression(tmp_db):
+    """Regression test for a REAL production crash: GitHub Actions operated
+    on a DB snapshot with a residual null fuel_mix value (present row,
+    calendar-adjacent, but null) — compute_deltas only filtered MISSING
+    rows (calendar gaps), not present-but-null ones, so a NaN reached
+    sklearn's LinearRegression.fit() and crashed with 'Input X contains NaN'."""
+    from gridflex.store.db import get_connection
+
+    con = get_connection()
+    n = 200
+    periods = pd.date_range("2024-01-01", periods=n, freq="h", tz="UTC")
+    np.random.seed(3)
+    demand = 100_000 + np.random.normal(0, 1000, n)
+    ng = demand - 50_000
+    ng_with_null = ng.copy()
+    ng_with_null[100] = np.nan  # present row, calendar-adjacent, but null value
+
+    upsert(con, "pjm_demand", pd.DataFrame({
+        "period": periods, "respondent": ["PJM"] * n, "type": ["D"] * n, "value": demand,
+    }))
+    upsert(con, "fuel_mix", pd.DataFrame(
+        [{"period": p, "respondent": "PJM", "fueltype": "NG", "value": ng_with_null[i]}
+         for i, p in enumerate(periods)]
+    ))
+
+    deltas = compute_deltas(con)  # must not produce NaN
+    con.close()
+
+    assert not deltas["delta_demand"].isna().any()
+    assert not deltas["delta_emissions"].isna().any()
+    assert periods[100] not in set(deltas["period"])  # the null row itself
+    assert periods[101] not in set(deltas["period"])  # spans the resulting 2h gap
+    assert periods[99] in set(deltas["period"])  # legitimate, unaffected
+
+    result = estimate_marginal_emissions_rate(deltas)  # must not raise (this is what crashed)
+    assert result["marginal_rate_kg_per_mwh"] is not None

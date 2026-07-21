@@ -21,6 +21,7 @@ import typer
 
 from gridflex.ingest.eia import EIAClient
 from gridflex.ingest.land import write_raw
+from gridflex.ingest.validate import validate_and_filter
 from gridflex.store.db import get_connection, upsert
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
@@ -73,6 +74,10 @@ def run(from_year: int = 2019) -> None:
                     continue
                 if df.empty:
                     log.warning("  %s: 0 rows for %s..%s", dataset, start, end)
+                    continue
+                df = validate_and_filter(df, dataset)
+                if df.empty:
+                    log.warning("  %s: 0 rows survived validation for %s..%s", dataset, start, end)
                     continue
                 write_raw(df, dataset)
                 n = upsert(con, dataset, df)

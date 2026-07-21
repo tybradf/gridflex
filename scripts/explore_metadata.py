@@ -93,7 +93,8 @@ def main() -> None:
     for name, path in ROUTES.items():
         describe_route(name, path)
 
-    print("Done")
+    print("\n\nDone. Paste the PJM_SUBBA and FUEL_TYPES lines (and the 'type' values")
+    print("from the region route) back into the chat.\n")
 
 
 if __name__ == "__main__":
