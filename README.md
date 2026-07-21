@@ -276,6 +276,42 @@ papered over.
 certain hours than others" defensible** — the actual foundation for the
 flexible-demand value engine (Week 4.3).
 
+## Results (Week 4 — flexible-demand value engine)
+
+Given X MW of flexible demand currently scheduled at some hour, with a
+window of H hours it can be delayed, `full_value_of_shift` finds the
+statistically defensible best hour to move it to (only ever recommending a
+shift whose 95% CI does not overlap the origin hour's — never a difference
+indistinguishable from noise) and reports two DELIBERATELY SEPARATE
+results, not one blended score:
+
+- **Emissions value** (system-wide, from the Week 4.1 segmented rates):
+  `mw * (rate_origin - rate_target)`, kg CO2 avoided.
+- **Peak context** (zone-level, from Week 4.2's demand data): typical
+  demand at both hours as a % of that zone's typical seasonal peak — a
+  grid operator's capacity/reliability question, genuinely different from
+  a sustainability team's emissions question.
+
+**Real example — 100 MW flexible in PECO (zone PE), spring, currently
+scheduled at 9am, allowed to shift up to 6h:**
+
+```
+Emissions:  9am (543 kg/MWh) -> 12pm (283 kg/MWh)
+            25,963 kg CO2 avoided
+Peak:       9am = 76.6% of PE's typical seasonal peak
+            12pm = 91.9% of PE's typical seasonal peak
+```
+
+**The finding worth stating plainly: this shift is excellent for
+system-wide emissions and BAD for local peak demand — the two objectives
+point in opposite directions.** Moving load from 9am to noon cuts
+emissions by nearly half, but moves PECO's demand closer to its own daily
+peak, not further from it. Blending these into one "value" score would
+have hidden this tension entirely; keeping them separate is what makes it
+visible. A real deployment would need to decide how to weigh emissions
+against local capacity constraints — this tool surfaces the tradeoff
+rather than resolving it by fiat.
+
 ## Roadmap
 
 - **Week 2:** live public dashboard (PJM zone map, carbon intensity, GitHub Pages) ✅
