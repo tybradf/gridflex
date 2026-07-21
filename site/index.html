@@ -116,6 +116,29 @@
   }
   #flex-tension.show { display: block; }
 
+  /* ---- About overlay ---- */
+  .brand-row { display: flex; align-items: center; gap: 8px; position: relative; }
+  #about-trigger {
+    width: 18px; height: 18px; border-radius: 50%; border: 1px solid var(--muted);
+    color: var(--muted); background: none; font-family: var(--mono); font-size: 11px;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    padding: 0; line-height: 1;
+  }
+  #about-trigger:hover, #about-trigger.pinned { border-color: var(--teal); color: var(--teal); }
+  #about-panel {
+    display: none; position: absolute; top: 28px; left: 0; width: 340px; z-index: 100;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
+    padding: 16px 18px; box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    font-size: 13px; line-height: 1.6; color: var(--text);
+  }
+  #about-panel.show { display: block; }
+  #about-panel .caveat {
+    margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line);
+    font-size: 11px; color: var(--muted); line-height: 1.5;
+  }
+  #about-panel a { color: var(--teal); text-decoration: none; }
+  #about-panel a:hover { text-decoration: underline; }
+
   .leaflet-popup-content-wrapper { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 4px; }
   .leaflet-popup-content { font-family: var(--mono); font-size: 12px; margin: 8px 12px; }
   .leaflet-popup-tip { background: var(--panel); }
@@ -129,7 +152,24 @@
 <body>
 <div id="app">
   <header>
-    <div class="brand">GRIDFLEX <span>// PJM live</span></div>
+    <div class="brand-row">
+      <div class="brand">GRIDFLEX <span>// PJM live</span></div>
+      <button id="about-trigger" aria-label="About GridFlex">?</button>
+      <div id="about-panel">
+        GridFlex is a live, automated system that forecasts PJM electricity
+        demand and carbon intensity, then calculates what it's worth to
+        shift flexible power use to cleaner hours. The forecast above is
+        currently beating PJM's own day-ahead model. Every shift
+        recommendation below passes a statistical significance check —
+        not a guess. Built solo, zero-cost infrastructure, fully open source.
+        <div class="caveat">
+          Zone-level demand and system-wide fuel-mix data publish on
+          independent schedules — the carbon scrubber may lag "now" by up
+          to ~24h while one data source catches up to the other.
+          <a href="https://github.com/tybradf/gridflex" target="_blank" rel="noopener">Code &amp; methodology &rarr;</a>
+        </div>
+      </div>
+    </div>
     <div class="readout">
       <span class="label">Carbon intensity</span>
       <span class="value carbon" id="readout-carbon">—</span>
@@ -359,6 +399,27 @@
   svg.addEventListener('pointerdown', e => { dragging = true; setSelected(idxFromClientX(e.clientX)); });
   window.addEventListener('pointermove', e => { if (dragging) setSelected(idxFromClientX(e.clientX)); });
   window.addEventListener('pointerup', () => { dragging = false; });
+
+  // ---- About overlay: hover for desktop, click-to-pin for touch/keyboard ----
+  const aboutTrigger = document.getElementById('about-trigger');
+  const aboutPanel = document.getElementById('about-panel');
+  let aboutPinned = false;
+
+  aboutTrigger.addEventListener('mouseenter', () => { if (!aboutPinned) aboutPanel.classList.add('show'); });
+  aboutTrigger.addEventListener('mouseleave', () => { if (!aboutPinned) aboutPanel.classList.remove('show'); });
+  aboutTrigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    aboutPinned = !aboutPinned;
+    aboutTrigger.classList.toggle('pinned', aboutPinned);
+    aboutPanel.classList.toggle('show', aboutPinned);
+  });
+  document.addEventListener('click', (e) => {
+    if (aboutPinned && !aboutPanel.contains(e.target) && e.target !== aboutTrigger) {
+      aboutPinned = false;
+      aboutTrigger.classList.remove('pinned');
+      aboutPanel.classList.remove('show');
+    }
+  });
 
   // ---- Flexibility value calculator ----
   const flexData = payload.flexibility || { segments: [], zone_typical_demand: [] };
