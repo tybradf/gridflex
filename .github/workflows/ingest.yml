@@ -48,6 +48,24 @@ jobs:
         env:
           EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
 
+      - name: Clean data quality issues
+        # Runs BOTH passes (range/null validation + contextual spike
+        # detection) against the FULL downloaded DB, which has all the
+        # neighboring-hour context detect_spike_rows needs — unlike a small
+        # incremental ingest batch, which is why this couldn't just live
+        # inside the ingest step itself. Verified safe to run unattended:
+        # idempotent on already-clean data (see
+        # tests/test_clean_outliers.py::test_delete_is_safe_noop_on_already_clean_data).
+        #
+        # This closes a real gap that caused a production incident: local
+        # cleanup was previously a manual, human-run step and never got
+        # synced to the Release DB snapshot, so Actions kept operating on
+        # stale/dirty data until it crashed on a null-driven NaN. No
+        # continue-on-error — if this step fails, downstream steps
+        # (forecast, export, marginal-emissions regression) would be
+        # working on data we can't vouch for, so the whole run should stop.
+        run: python scripts/clean_outliers.py --delete
+
       - name: Generate live forecast
         # continue-on-error: a transient Open-Meteo hiccup shouldn't block
         # the core demand pipeline from deploying — but this step still

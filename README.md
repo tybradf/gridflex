@@ -129,9 +129,15 @@ bugs, and each has a clear path to fixing later:
   instead. Found 22 such rows across pjm_demand, subba_demand, and
   fuel_mix (cleaned via `scripts/clean_outliers.py`); ~75% cluster around
   00:00 Eastern, suggesting a batch-processing artifact, not investigated
-  further. This check is retroactive only - not yet wired into ongoing
-  ingest, since it needs neighboring context a small incremental batch may
-  not have. A documented gap, not a solved one.
+  further. **This check now runs automatically as part of the daily cron**
+  (`.github/workflows/ingest.yml`, right after ingest, before anything
+  downstream consumes the data) - it initially shipped retroactive-only,
+  which is exactly what caused a real production incident: local cleanup
+  was a manual step that never got synced to the Release DB snapshot, so
+  Actions kept operating on stale data until it crashed on a null-driven
+  NaN in the marginal-emissions regression. Verified safe to run
+  unattended (idempotent on already-clean data, see
+  `test_delete_is_safe_noop_on_already_clean_data`).
 - **~0.18% of historical demand data contained null values**, weakly
   correlated with DST transitions (4 of 6 clusters land exactly on real US
   DST dates, 2 don't - cause not fully confirmed, likely an intermittent

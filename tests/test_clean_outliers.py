@@ -121,3 +121,26 @@ def test_spike_pass_catches_contextual_outlier_missed_by_range_check(tmp_db):
     assert len(remaining_zone) == 1
     assert remaining_zone.iloc[0]["subba"] == "CE"
     assert remaining_zone.iloc[0]["value"] == 2000.0
+
+
+def test_delete_is_safe_noop_on_already_clean_data(tmp_db):
+    """This is exactly what every subsequent daily cron run looks like once
+    the first cleanup has happened — confirms it's safe to run --delete
+    unattended every day, not just the first time."""
+    from gridflex.store.db import get_connection
+    from scripts.clean_outliers import run as clean_run
+
+    con = get_connection()
+    periods = pd.date_range("2024-01-01", periods=200, freq="h", tz="UTC")
+    upsert(con, "pjm_demand", pd.DataFrame({
+        "period": periods, "respondent": ["PJM"] * 200, "type": ["D"] * 200,
+        "value": [100_000.0 + i for i in range(200)],
+    }))
+    con.close()
+
+    clean_run(delete=True)  # must not raise, must not change anything
+
+    con = get_connection()
+    count = con.execute("SELECT COUNT(*) FROM pjm_demand").fetchone()[0]
+    con.close()
+    assert count == 200
